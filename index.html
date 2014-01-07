@@ -6,8 +6,8 @@
     <meta name="description" content="rpg-generators">
     <meta name="author" content="Harry Culpan">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <script src="js/jquery-2.0.3.min.js"   type="text/javascript"></script>
@@ -15,9 +15,10 @@
 <script src="js/general-functions.js"   type="text/javascript"></script>
 
 <div class="container">
-    <div class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -25,26 +26,42 @@
             </button>
             <a class="navbar-brand" href="#">RPG Generators</a>
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Labyrinth Lord</a></li>
-                <li><a href="#">Covert Ops</a></li>
-            </ul>
-        </div>
-        <!--    <ul class="nav navbar-nav">
-        <li class="active"><a href="#lab-lord" data-toggle="tab">Labyrinth Lord</a></li>
-        <li><a href="#covert-ops" data-toggle="tab">Covert Ops</a></li>
-    </ul>
-    <div id='content' class="tab-content">
-        <div class="tab-pane active" id="lab-lord">
-            <ul class="nav nav-pills">
-                <li class="active"><a href="#npc-generator" data-toggle="tab">NPC Generator</a></li>
-            </ul>
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Labyrinth Lord <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#npc-generator" data-toggle="tab">NPC Generator</a></li>
+                        <li><a href="#random-encounter" data-toggle="tab">Random Encounter Generator</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Covert Ops <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#mission-generator" data-toggle="tab">Mission Generator</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <div class="tab-pane" id="npc-generator" data-html="html/npc-generator">
-        </div>-->
-    </div>
+
+<!-- tab content -->
+        <div class="tab-content">
+            <div id="npc-generator" class="tab-pane" data-html="html/lablord/npc-generator">
+            </div>
+            <div id="random-encounter" class="tab-pane" data-html="html/lablord/random-encounter">
+                <label>random encounter</label>
+            </div>
+            <div id="mission-generator" class="tab-pane">
+                <label>mission generator</label>
+            </div>
+        </div>
+    </nav>
 </div>
 </body>
 </html>

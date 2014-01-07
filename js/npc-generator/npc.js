@@ -122,7 +122,7 @@ function generateAbilityScore(num, array) {
     return abilityScoreMatrix[array.substr(num, 1)].getValue();
 }
 
-function generateNpc() {
+function generateSingleNpc() {
     var level = getPartyLevel() + npcLevelAdjustment.getValue();
     if (level < 1) {
         level = 1;
