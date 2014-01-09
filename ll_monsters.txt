@@ -1,0 +1,325 @@
+# name|Enc.|AL|MV|AC|cAC|HD|Attks|Dmg|Save|Morale|Hoard Class|XP|Source|Page
+Aerial Servant|1|1|N|MV 240` (80`)|3,17|1|1|8d4|F16|10|None|3,000|AEC|105
+Ankheg|1d6|1d6|N|MV 120` (40`)|3,17|1d6+2|1|3d6 (+1d4)|As HD|9|XIX|80-2,800|AEC|105
+Ant, Giant|2d4|4d6|N|MV 180` (60`)|3,17|4|1|2d6|F2|7|VI|80|LL|63
+Ape, Albino|1d6|2d4|N|MV 120` (40`)|6,14|4|2 (claw, claw)|1d4/1d4|F2|7|None|80|LL|63
+Ape, Chimpanzee|1d4|3d4|N|MV 120` (40`)|6,14|3|3 (2 claws, 1 bite)|1d3/1d3/1d6|F3|9|None|50|AEC|105
+Ape, Gorilla|1d4|3d4|N|MV 120` (40`)|6,14|4+1|3 (2 claws, 1 bite)|1d3/1d3/1d6|F4|8|None|80|AEC|105
+Ape, Man-Eating|2d4|3d4|N|MV 120` (40`)|6,14|5|3 (2 claws, 1 bite)|1d4/1d4/1d8|F5|10|XIX|350|AEC|106
+Axe Beak|1d6|2d4|N|MV 180` (60`)|6,14|3|3 (2 claws, 1 bite)|1d3/1d3/2d4|F3|8|None|50|AEC|106
+Baboon|2d4|1d4x10|N|MV 120` (40`)|7,13|1+1|1 (bite)|1d4|F1|7|None|15|AEC|106
+Baboon, Higher|2d6|5d6|N|MV 120` (40`)|6,14|2|2 (bite, club)|1d3/1d6|F2|8|VI|20|LL|63
+Badger|1d2|1d4+1|N|MV 60` (20`)|4,16|1+2|3 (2 claws, 1 bite)|1d2/1d2/1d3|F1|8|None|15|AEC|106
+Badger, Giant|1d2|1d4+1|N|MV 60` (20`)|4,16|3|3 (2 claws, 1 bite)|1d3/1d3/1d6|F3|8|None|50|AEC|106
+Basilisk|1d6|1d6|N|MV 60` (20`)|4,16|6+1|2 (bite, gaze)|1d10/petrify|F6|9|XVII|570|LL|63
+Bat|1d00|1d00|N|MV 9` (3`) Fly 120` (40`)|6,14|1 hp|confuse|None|0 Human|6|None|6|LL|64
+Bat, Giant|1d10|1d10|N|MV 30` (10`) Fly 180` (60`)|6,14|2|1 (bite)|1d4|F1|8|None|20|LL|64
+Bear, Black|1d4|1d4|N|MV 120` (40`)|6,14|4|3 (2 claws, bite)|1d3/1d3/1d6|F2|7|VI|80|LL|64
+Bear, Cave|1|1d2|N|MV 120` (40`)|5,15|7|3 (2 claws, bite)|1d3/1d3/1d6|F3|9|VII|440|LL|64
+Bear, Grizzly|1|1d4|N|MV 120` (40`)|6,14|5|3 (2 claws, bite)|1d3/1d3/1d6|F2|8|VI|200|LL|64
+Bear, Polar|1|1d2|N|MV 120` (40`)|6,14|6|3 (2 claws, bite)|1d3/1d3/1d6|F3|8|VI|320|LL|64
+Bee, Giant Killer|1d6|5d6|N|MV 150` (50`)|7,13|1d4 hp|1 (sting)|1d3 + poison|F1|9|None|7|LL|65
+Beetle, Giant Boring|3d6|3d6|N|MV 60` (20`)|3,17|5|1 (bite)|5d4|F5|7|VIII/IX/XXI|200|AEC|107
+Beetle, Giant Carnivorous|1d6|2d4|N|MV 150` (50`)|3,17|3+1|1 (bite)|2d6|F1|9|VI|65|LL|65
+Beetle, Giant Fire|1d8|2d6|N|MV 120` (40`)|4,16|1+2|1 (bite)|2d4|F1|7|None|15|LL|65
+Beetle, Giant Rhinoceros|1d6|1d6|N|MV 60` (20`)|2,18|12|2 (bite, horn)|3d6/2d8|F12|8|None|1,200|AEC|107
+Beetle, Giant Spitting|1d8|2d6|N|MV 120` (40`)|4,16|2|1 (bite)|1d6 + toxic spray|F1|8|None|38|LL|65
+Beetle, Giant Stag|2d6|2d6|N|MV 60` (20`)|3,17|7|3 (bite, 2 horns)|4d4/1d10/1d10|F7|8|None|440|AEC|107
+Black Pudding|1|0|N|MV 60` (20`)|6,14|10|1|3d8|F5|12|None|3,100|LL|65
+Blink Dog|1d6|1d6|L|MV 120` (40`)|5,15|4|1 (bite)|1d6|F4|6|XX|135|LL|66
+Boar|1d6|1d6|N|MV 150` (50`)|7,13|3|1 (tusk)|2d4|F2|9|None|50|LL|66
+Boar, Giant|1d4|1d4+1|N|MV 120` (40`)|6,14|5|1 (tusk)|3d4|F5|9|None|200|LL|66
+Boar, Warthog|1d6|1d6|N|MV 120` (40`)|7,13|3+3|2|2d4/2d4|F3|9|None|65|AEC|107
+Brownie|4d4|4d4|LG|MV 120` (40`)|3,17|1d4 hp|1 (weapon)|1d3|M1|7|X/XI/XIII|12|AEC|107
+Bugbear|2d4|5d4|C|MV 90` (30`)|5,15|3+1|1 (weapon)|2d4 or weapon|F3|9|XXI|100|LL|66
+Bulette|1d2|1d2|N|MV 150` (50`)|-2 (6)-2 (6),--|9|3 (2 claws, 1 bite) or 4 (4 claws)|4d12/2d6/3d6 or 3d6/3d6/3d6/3d6|F9|9|None|1,000|AEC|107
+Camel|0|2d4|N|MV 150` (50`)|7,13|2|2 (bite, hoof)|1/1d4|F1|7|None|20|LL|66
+Carcass Scavenger|1d3|1d3|N|MV 120` (40`)|7,13|3+1|8 (stingers)|paralysis|F2|9|XXI|135|LL|67
+Cat, Lion|1d4|1d8|N|MV 150` (50`)|6,14|5|3 (2 claws, bite)|1d4+1/1d4+1/1d10|F3|9|VI|200|LL|67
+Cat, Mountain Lion|1d4|1d4|N|MV 150` (50`)|6,14|3+2|3 (2 claws, bite)|1d3/1d3/1d6|F2|8|VI|65|LL|67
+Cat, Panther|1d2|1d6|N|MV 210` (70`)|4,16|4|3 (2 claws, bite)|1d4/1d4/1d8|F2|8|VI|80|LL|67
+Cat, Sabre-tooth Tiger|1d4|1d4|N|MV 150` (50`)|6,14|8|3 (2 claws, bite)|1d8/1d8/2d8|F4|10|VII|560|LL|67
+Cat, Tiger|1|1d3|N|MV 150` (50`)|6,14|6|3 (2 claws, bite)|1d6/1d6/2d6|F3|9|VI|570|LL|67
+Centaur|0|2d10|N|MV 180` (60`)|5,15|4|3 (2 hooves, weapon)|1d6/1d6/weapon|F4|8|XXII|80|LL|67
+Centipede, Giant|2d4|1d8|N|MV 60` (20`)|9,11|1d4 hp|1 (bite)|poison|0 Human|7|None|6|LL|68
+Chimera|1d2|1d4|C|MV 120` (40`) Fly 180` (60`)|4,16|9|5 (2 claws, 3 heads, breath)|1d3/1d3/2d4/2d4/3d4/3d6 fire breath|F9|9|XVII|1,700|LL|68
+Cockatrice|1d4|1d8|N|MV 90` (30`) Fly 180` (60`)|6,14|5|2 (beak, petrify)|1d6/petrify|F5|7|XIX|350|LL|68
+Couatl|1d4|1d4|LG|MV 60` (20`) Fly 180` (60`)|5,15|9|2 (bite, constrict)|1d3/2d4|M9|8|XXI|3,100|AEC|108
+Crab, Giant|1d2|1d6|N|MV 60` (20`)|2,18|3|2 (pinchers)|2d6/2d6|F2|7|None|50|LL|68
+Crayfish, Giant|1d4|1d4|N|MV 60` (`20) Swim 120` (40`)|4,16|4+4|2 (claws)|2d6/2d6|F4|9|None|140|AEC|108
+Crocodile|0|1d8|N|MV 90` (30`) Swim 90` (30`)|5,15|2|1|1d8|F1|7|None|20|LL|68
+Crocodile, Giant|0|1d3|N|MV 90` (30`) Swim 90` (30`)|1,19|15|1|3d8|F8|9|None|1,500|LL|68
+Crocodile, Large|0|1d4|N|MV 90` (30`) Swim 90` (30`)|3,17|6|1|2d8|F3|7|None|320|LL|68
+Cyclops|1|1d4|C|MV 90` (30`)|5,15|13|1|3d10|F13|9|XVII + 5,000 gp|2,400|LL|69
+Demon Boar|1d4|1d4|C|MV 120` (40`) Boar 180` (60`)|3 (9)3 (9),--|9|1 (gore or weapon)|2d6/weapon|F9|10|XX|3,800|LL|69
+Demon, Astarot (Demon Lord)|Unique|Unique|CE|MV 150` (50`)|-7,27|184 hp (23 HD)|3 (2 tentacles, tail)|1d6/1d6/2d6|F23|12|VIII, IX, XXII|17,000|AEC|109
+Demon, Babau (Standard Order Demon)|1d3|1d6|CE|MV 150` (50`)|-3,23|7+10|3 (2 claws, horn) or 1 (weapon)|1d4+1/1d4+1/2d4 or As weapon +4|F7|10|XXI|1,700|AEC|109
+Demon, Balor (Standard Order Demon)|1d3|1d6|CE|MV 60` (20`) Fly 150` (50`)|-2,22|8+7|1 (sword or whip)|1d8+1 or 1d6 and 3d6 fire damage|F8|10|XXII|1,820|AEC|110
+Demon, Glabrezu (Higher Order Demon)|1d3|1d6|CE|MV 90` (30`)|-4,24|10|5 (2 pinchers, 2 claws, bite)|2d6/2d6/1d3/1d3/1d4+1|F10|9|XXII|3,100|AEC|110
+Demon, Hezrou (Higher Order Demon)|1d3|1d6|CE|MV 120` (40`)|-2,22|9|3 (2 claws, 1 bite)|1d3/1d3/4d4|F9|10|XIV|3,100|AEC|111
+Demon, Juiblex (Demon Lord)|1|Unique|CE|MV 30` (10`)|-7,27|100 hp (21 HD)|1|4d10|F21|10|Xx2, XIIx2|7,000|AEC|111
+Demon, Marilith (Standard Order Demon)|1d3|1d6|CE|MV 120` (40`)|-6,26|7+6|7 (6 weapons, constrict)|As weapon/2d4|F7|9|XVII|1,700|AEC|112
+Demon, Nalfeshnee (Higher Order Demon)|1d3|1d6|CE|MV 90` (30`) Fly 120` (40`)|-1,21|11|3 (2 claws, 1 bite)|1d4/1d4/2d4|F11|10|XVIII|4,400|AEC|112
+Demon, Orcus (Demon Lord)|1|Unique|CE|MV 90` (30`) Fly 180` (60`)|-6,26|125 hp (22 HD)|2 (fists and tail)|2d6+1/2d4 + poison|F22|10|VIII, IX, XII|13,000|AEC|113
+Demon, Quasit (Lower Order Demon)|1|0|CE|MV 150` (50`)|2,18|3|3 (2 claws, 1 bite)|1d2/1d2/1d4|F3|10|XIx2|95|AEC|113
+Demon, Succubus/Incubus (Standard Order Demon)|1|1|CE|MV 120` (40`) Fly 180` (60`)|0,20|6|2 (claws)|1d3/1d3|F6|7|XI, XIV, XV|1,320|AEC|114
+Demon, Vrock (Standard Order Demon)|1d3|1d6|CE|MV 120` (40`) Fly 180` (60`)|0,20|8|5 (2 claws, 2 rear claws, beak)|1d4/1d4/1d8/1d8/1d6|F8|11|XXI|2,060|AEC|114
+Devil, Amon (Arch-devil)|1|Unique|LE|MV 180` (60`)|-2,22|132 hp (22 HD)|1 (weapon or bite)|AS weapon +4 or 3d4|F22|10|XII, XVI|13,000|AEC|115
+Devil, Bael (Arch-devil)|1|Unique|LE|MV 120` (40`)|-3,23|110 hp (21 HD)|2|As weapon +6|F21|10|XII, XVI|11,000|AEC|116
+Devil, Barbed (Lesser devil)|1d2|3d4|LE|MV 120` (40`)|0,20|8|3 (2 claws, tail)|1d3/1d3/4d4|F8|10|None|2,560|AEC|116
+Devil, Bone (Lesser devil)|1d2|2d4|LE|MV 150` (50`)|-1,21|9|1 (hook or tail)|3d4 or 2d4 + STR drain|F9|10|None|3,100|AEC|117
+Devil, Erinyes (Lesser devil)|1d3|14d4|LE|MV 60` (20`) Fly 210` (70`)|2,18|6+5|1|2d4|F6|10|X|1,280|AEC|117
+Devil, Geryon (Arch-devil)|1|Unique|LE|MV 60` (20`) Fly 180` (60`)|-3,23|135 hp (23HD)|3 (2 claws, sting)|3d6/3d6/2d4|F23|10|X, XV|13,000|AEC|118
+Devil, Horned (Greater devil)|1d2|1d4+1|LE|MV 90` (30`) Fly 180` (60`)|-5,25|5+5|4 (2 claws, bite, tail) or 1 (weapon)|1d4/1d4/1d4+1/1d3 or 2d6|F5|9|XIV|1,260|AEC|118
+Devil, Ice (Greater devil)|1|1d4|LE|MV 60` (20`)|-4,24|11|4 (2 claws, mandibles, tail) or 1 (weapon)|1d4/1d4/1d4/3d4 or 2d6 + paralyzation|F11|11|X, XI|4,800|AEC|119
+Devil, Imp (Lesser devil)|1|1|LE|MV 60` (20`) Fly 180` (60`)|2,18|2+2|1 (tail)|1d4|F2|8|XIII|83|AEC|119
+Devil, Lemure|0|5d6|LE|MV 30` (10`)|7,13|3|1 (claws)|1d4|F3|6|None|95|AEC|120
+Devil, Pit Fiend (Greater devil)|1|1d3|LE|MV 60` (20`) Fly 150` (50`)|-3,23|13|2 (weapons) or 1 (tail)|1d6+6/1d6+6 or 2d4|F13|10|II, X|5,100|AEC|120
+Dinosaur, Pteranodon|0|1d4|N|MV Fly 240` (120`)|6,14|5|1 (bite)|1d12|F3|8|VII|350|LL|92
+Dinosaur, Pterodactyl|0|2d4|N|MV Fly 180` (60`)|7,13|7|1 (bite)|1d3|F1|7|None|13|LL|92
+Dinosaur, Stegosaurus|0|1d4|N|MV 60` (20`)|3,17|11|1 (tail or trample)|2d8 or 2d6|F6|7|None|1,200|LL|98
+Dinosaur, Titanothere|0|1d6|N|MV 120` (40`)|5,15|12|1 (butt or trample)|2d6 or 2d8|F6|7|None|2,000|LL|99
+Dinosaur, Triceratops|0|1d4|N|MV 90` (30`)|2,18|11|1 (gore or trample)|3d6|F6|8|None|1,200|LL|99
+Dinosaur, Tyrannosaurus Rex|0|1|N|MV 120` (40`)|3,17|20|1 (bite)|6d6|F10|11|VII x 3|2,250|LL|100
+Djinni|1|1|N|MV 90` (30`) Fly 240` (80`)|5,15|7+1|1 (fist, whirlwind)|2d8/2d6|F14|12|None|1,700|LL|69
+Dog, War|0|0|N|MV 120` (40`)|6,14|2+2|1|2d4|F2|11|None|35|AEC|121
+Dog, Wild|4d4|4d4|N|MV 150` (50`)|7,13|1+1|1|1d4|F1|7|None|15|AEC|121
+Doppelganger|1d6|1d6|C|MV 90` (30`)|5,15|4|1|1d12|F10|10|XVIII|190|LL|70
+Dragon Turtle|0|1|C|MV 30` (10`) Swim 90` (30`)|-2,22|30|3 (2 claws, bite)|1d8/1d8/1d6x10|F15|10|XV|9,500|LL|72
+Dragon, Black|1d4|1d4|C|MV 90` (30`) Fly 240` (80`)|2,18|7|3 or 1 (2 claws, bite or breath)|1d4+1/1d4+1/2d10|F7|8|XV|1,490|LL|70
+Dragon, Blue|1d4|1d4|N|MV 90` (30`) Fly 240` (80`)|0,20|9|3 or 1 (2 claws, bite or breath)|1d6+1/1d6+1/3d10|F9|9|XV|3,100|LL|70
+Dragon, Brass|1d4|1d4|CG|MV 120` (40`) Fly 240` (80`)|2,18|7|3 (2 claws, bite) or 1 (breathe)|1d4/1d4/4d4 or Breathe|F7|9|XV|1,490|AEC|121
+Dragon, Bronze|1d4|1d4|LG|MV 90` (30`) Fly 240` (80`)|0,20|9|3 (2 claws, bite) or 1 (breathe)|1d6/1d6/4d6 or Breathe|F9|9|XV|3,100|AEC|121
+Dragon, Chromatic|1|1|CE|MV 60` (20`) Fly 180` (60`)|0,20|16 hp per head/8 HD for body (18 HD)|6 (5 bites, tail)|As head/1d6 + poison|F18|10|XVx4|5,250|AEC|121
+Dragon, Copper|1d4|1d4|CG|MV 90` (30`) Fly 240` (80`)|1,19|8|3 (2 claws, bite) or 1 (breathe)|1d4/1d4/5d4 or Breathe|F8|9|XV|2,060|AEC|121
+Dragon, Gold|1d4|1d4|L|MV 90` (30`) Fly 240` (80`)|-2,22|11|3 or 1 (2 claws, bite or breath)|2d4/2d4/6d6|F11|10|XV|3,600|LL|70
+Dragon, Green|1d4|1d4|C|MV 90` (30`) Fly 240` (80`)|1,19|8|3 or 1 (2 claws, bite or breath)|1d6/1d6/3d8|F8|9|XV|2,060|LL|70
+Dragon, Red|1d4|1d4|C|MV 90` (30`) Fly 240` (80`)|-1,21|10|3 or 1 (2 claws, bite or breath)|1d8/1d8/4d8|F10|10|XV|3,100|LL|70
+Dragon, Sea|0|1d4|N|MV 180` (60`) Swim and Fly|1,19|8|1 (bite or spit)|3d8 or poison|F8|9|XV|2,060|LL|70
+Dragon, Silver|1d4|1d4|LG|MV 90` (30`) Fly 240` (80`)|-1,21|10|3 (2 claws, bite) or 1 (breathe)|1d6/1d6/5d6 or Breathe|F10|10|XV|3,100|AEC|121
+Dragon, White|1d4|1d4|N|MV 90` (30`) Fly 240` (80`)|3,17|6|3 or 1 (2 claws, bite or breath)|1d4/1d4/2d8|F6|8|XV|1,070|LL|70
+Dragonne|1|1|N|MV 150` (50`) Fly 90` (30`)|2,18|9|3 (2 claws, bite) or 1 (roar)|1d8/1d8/3d6 or Roar (SV paralyze or suffer weakness)|F9|9|IX, XX, VII|2,800|AEC|122
+Dryad|0|1d6|N|MV 120` (40`)|5,15|2|1 (charm)|0|F4|6|XIX|29|LL|72
+Dwarf|1d6|5d8|L or N|MV 60` (20`)|4,16|1|1|1d8 or weapon|D1|8|XVI|10|LL|72
+Dwarf, Duergar|2d4|1d00+100|CE|MV 60` (20`)|4,16|1+2|1 (weapon)|As weapon|F1|8|VI|21|AEC|122
+Eagle, Giant|1d6|1d20|N|MV 30` (10`) Fly 480` (120`)|7,13|4|3 (2 claws, bite)|1d6/1d6/2d6/|F4|8|XI|80|AEC|122
+Ear Seeker|1d4|1d4|N|MV 10` (3`)|9,11|1 hp|Special|Special|F1|N/A|None|5|AEC|123
+Eel, Electric|1d3|1d3|N|MV 120` (40`)|9,11|2|1 (bite)|1d4|F2|7|None|29|AEC|123
+Eel, Giant|1d4|1d4|N|MV 90` (30`)|6,14|5|1 (bite)|3d6|F5|8|None|200|AEC|123
+Eel, Sea|1d6x10|1d6x10|N|MV 150` (50`)|8,12|1 -1|1 (bite)|1|F1|7|X, XII, XIII|6|AEC|123
+Efreeti|1|1|C|MV 90` (30`)|3,17|10|1|2d8|F15|12|None|4,500|LL|73
+Elemental, Air|1|1|N|MV Fly 360` (120`)|2/0/-22/0/-2,--|8/12/16|special|1d8 or 2d8 or 3d8|F8-16|10|None|1,570/2,800/3,300|LL|73
+Elemental, Earth|1|1|N|MV 60` (20`)|2/0/-22/0/-2,--|8/12/16|special|1d8 or 2d8 or 3d8|F8-16|10|None|1,570/2,800/3,300|LL|73
+Elemental, Fire|1|1|N|MV 120` (40`)|2/0/-22/0/-2,--|8/12/16|special|1d8 or 2d8 or 3d8|F8-16|10|None|1,570/2,800/3,300|LL|73
+Elemental, Water|1|1|N|MV 60` (20`) Swim 180` (60`)|2/0/-22/0/-2,--|8/12/16|special|1d8 or 2d8 or 3d8|F8-16|10|None|1,570/2,800/3,300|LL|73
+Elephant|0|1d20|N|MV 120` (40`)|5,15|9|2 or 1 (2 tusks or trample)|2d4/2d4 or 4d8|F5|8|None|2,400|LL|74
+Elf|1d4|2d12|N|MV 120` (40`)|5,15|1+1|1 (weapon)|1d8 or weapon|E1|8|XVIII|15|LL|74
+Elf, Deep|1d10|4d12|NE|MV 120` (40`)|5,15|1|1 (weapon)|As weapon|F1|7|XX|10|AEC|123
+Elf, Drow|2d4|5d10|CE|MV 120` (40`)|4,16|2|1 or 2 (weapon)|As weapon|F2|10|Vx5|38|AEC|123
+Ettin|1d2|1d4|C|MV 120` (40`)|3,17|10|2 (club, club)|2d8/3d6|F10|9|XIX|1,700|LL|74
+Eye of Terror|1|1|CE|MV 60` (20`)|0 (body)/2 (central eye)/3 (eye stalks)0 (body)/2 (central eye)/3 (eye stalks),--|10-12|3 (2 tentacles, bite)|1d6/1d6/2d4|F12|9|VII, IX, XIV|7,300|AEC|125
+Eye of the Deep|1|1|CE|MV 60` (20`)|5,15|10-12|3 (2 claws, bite)|2d4/2d4/1d6|F10-12|8|X|3,800|AEC|124
+Eye, Floating|1d12|1d12|N|MV 300` (100`)|9,11|1d4 hp|1 (eye)|SV paralyzation or stunned|F1|6|None|6|AEC|124
+Eye, Tentacled|1|1|CE|MV 90` (30`)|4 (tentacles 5)4 (tentacles 5),--|14-16|8 (tentacles) or 1 (bite)|1d8 (tentacles) or 2d6 (bite)|F14-16|10|VII, IX, XIV|4,200|AEC|125
+Ferret, Giant|1d8|1d12|N|MV 150` (50`)|5,15|1+1|1 (bite)|1d8|F1|8|None|15|LL|74
+Fish, Giant Catfish|0|1d2|N|MV Swim 90` (30`)|4,16|8+3|5 (bite, 4 feelers)|2d8/1d4 each feeler|F4|8|None|620|LL|75
+Fish, Giant Piranha|0|2d4|N|MV Swim 150` (50`)|6,14|3+3|1 (bite)|1d8|F2|7|None|65|LL|75
+Fish, Giant Rockfish|0|2d4|N|MV Swim 180` (60`)|7,13|5+5|4 (spines)|1d4x4 (each, poison)|F3|8|None|460|LL|75
+Fish, Giant Sturgeon|0|1|N|MV Swim 180` (60`)|0,20|10+2|1 (bite)|2d10|F5|9|None|1,700|LL|75
+Flightless Bird|2d10|2d10|N|MV 180` (60`)|7,13|1-3|1 (bite or claws)|1d4 or 2d4|F1-3|8|None|10; 20; 50|AEC|126
+Fly, Giant Carnivorous|1d6|2d6|N|MV 90` (30`) Fly 180` (60`)|6,14|2|1 (bite)|1d8|F1|8|VI|29|LL|75
+Frog, Giant|5d8|5d8|N|MV 30` (`10) Swim 90` (30`)|7,13|1-3|1 (bite)|1d3 or 1d6 or 2d4|F1-3|7|None|13; 29; 65|AEC|126
+Frog, Giant Killer|3d6|3d6|N|MV 60` (`20) Swim 120` (40`)|8,12|1+4|3 (2 claws, bite)|1d2/1d2/1d4+1|F1|7|None|21|AEC|126
+Frog, Giant Poisonous|2d6|2d6|N|MV 30` (`10) Swim 90` (30`)|8,12|1|1|1 and SV poison (with +4) or die|F1|7|None|13|AEC|126
+Fungi, Violet|1d4|1d4|N|MV 10` (3`)|7,13|3|1d4|SV poison or rot into corpse after 1 round|F3|8|None|80|AEC|126
+Gargoyle|1d6|2d4|C|MV 90` (30`) Fly 150` (50`)|5,15|4|4 (2 claws, bite, horn)|1d3/1d3/1d6/1d4|F8|11|XX|500|LL|75
+Gas Spore|1d3|1d3|N|MV 30` (10`)|9,11|1 hp|1|SV poison die in 1 day (if hit, SV wands or suffer 6d6 damage)|F1|12|None|6|AEC|126
+Gelatinous Cube|1|0|N|MV 60` (20`)|8,12|4|1|2d4/special|F2|12|VII|245|LL|76
+Ghast (Undead)|1d6|1d6|CE|MV 150` (50`)|4,16|4|3 (2 claws, bite)|1d4/1d4/1d8|F4|9|VIII, IX, XI, XXI|190|AEC|127
+Ghost (Undead)|1|1|CE|MV 90` (30`)|0 (8)0 (8),--|10|1|Special|F10|10|IX|3,100|AEC|127
+Ghoul (Undead)|1d6|2d8|C|MV 90` (30`)|6,14|2 (turn as 3 HD)|3|1d3/1d3/1d3 + paralysis|F2|9|XXI|47|LL|76
+Giant, Cloud|1d2|1d3|N|MV 120` (40`)|4,16|12+3|1|6d6|F12|10|XVIII + 5|2,000|LL|77
+Giant, Fire|1d2|1d3|C|MV 120` (40`)|4,16|11+2|1|5d6|F11|9|XVIII + 5|2,000|LL|77
+Giant, Frost|1d2|1d4|C|MV 120` (40`)|4,16|10+1|1|4d6|F10|9|XVIII + 5|1,700|LL|76
+Giant, Hill|1d4|2d4|C|MV 120` (40`)|4,16|8|1|2d8|F8|8|XVIII + 5|560|LL|76
+Giant, Stone|1d2|1d6|N|MV 120` (40`)|4,16|9|1|3d6|F9|9|XVIII + 5|1,700|LL|76
+Giant, Storm|1|1d3|L|MV 150` (50`)|2,18|15|1 (rocks or lightning)|6d8|F15|10|XVIII + 5|3,300|LL|77
+Gnoll|1d6|3d6|C|MV 90` (30`)|5,15|2|1 (weapon)|2d4 or weapon|F2|8|XIX|47|LL|77
+Gnome|1d8|5d8|L or N|MV 60` (20`)|5,15|1|1 (weapon)|1d6 or weapon|D1|8|XX|10|LL|78
+Goblin|2d4|6d10|C|MV 60` (20`)|6,14|1 -1|1 (weapon)|1d6 or weapon|0 human|7|III (XX)|5|LL|78
+Golem, Amber|1|1|N|MV 180` (60`)|6,14|10|3 (2 claws, bite)|2d6/2d6/2d10|F5|12|None|3,100|LL|79
+Golem, Bone|1|1|N|MV 120` (40`)|2,18|8|4 (weapons)|weapon type|F4|12|None|2,065|LL|79
+Golem, Bronze|1|1|N|MV 240` (80`)|0,20|20|1 (fist)|3d10 + heat|F10|12|None|4,250|LL|79
+Golem, Clay|1|0|N|MV 60` (20`)|7,13|11|1 (fist)|3d10|F11|12|None|3,000|AEC|127
+Golem, Flesh|1|0|N|MV 90` (30`)|9,11|9|2 (fists)|2d8/2d8|F9|12|None|2,400|AEC|127
+Golem, Iron|1|0|N|MV 60` (20`)|3,17|18|1 (fist)|4d10|F18|12|None|5,250|AEC|127
+Golem, Stone|1|0|N|MV 60` (20`)|5,15|14|1 (fist)|3d8|F14-16|12|None|4,200|AEC|127
+Golem, Wood|1|1|N|MV 120` (40`)|7,13|2+2|1 (fist)|1d8|F1|12|None|59|LL|79
+Gorgon|1d2|1d4|C|MV 120` (40`)|2,18|8|1 (gore or breath)|2d6 or petrify|F8|8|XVIII|1,060|LL|79
+Gray Ooze|1|1|N|MV 10` (3`)|8,12|3|1|2d8|F2|12|None|80|LL|79
+Gray Worm|1d3|1d3|N|MV 60` (20`)|6,14|6|1 (bite)|1d8|F3|9|XXI|570|LL|80
+Green Slime|1|0|N|MV 3` (1`)|NANA,--|2|1|digestion|F1|12|None|38|LL|80
+Griffon|0|2d8|N|MV 120` (40`) Fly 360` (120`)|5,15|7|3 (2 claws, bite)|1d4/1d4/2d8|F4|8|XVIII|440|LL|80
+Groaning Spirit (Banshee) (Undead)|1|1|CE|MV 150` (50`)|0,20|8|1|1d8|F7|10|XXII|1,490|AEC|128
+Halfling|3d6|5d8|L|MV 90` (30`)|7,13|1 -1|1 (weapon)|1d6 or weapon|H1|7|XXI|5|LL|80
+Harpy|1d6|2d4|C|MV 60` (20`) Fly 150` (50`)|7,13|3|3 (2 claws, weapon, charm)|1d4/1d4/1d6|F3|7|XX|80|LL|81
+Hawk|0|1d6|N|MV Fly 480` (160`)|8,12|1d4 hp|1|1d2|0 human|7|None|5|LL|81
+Hawk, Giant|0|1d3|N|MV Fly 450` (150`)|6,14|3+3|1|1d6|F2|8|None|65|LL|81
+Hell Hound|2d4|2d4|C|MV 120` (40`)|4,16|3-7|1 (bite or breath)|1d6 or 1d6 per HD|F3 to F7|9|XX|80; 190; 500; 820; 1,140|LL|81
+Herd Animals|0|3d10|N|MV 240` (80`)|7,13|1-4|1 (butt)|1d4 or 1d6 or 1d8|F1 or F2|5|None|10; 20; 50; 80|LL|81
+Hippocampus|2d4|2d4|CG|MV 240` (80`)|5,15|4|1|1d4|F4|8|None|200|AEC|128
+Hippogriff|0|2d8|N|MV 180` (60`) Fly 360` (120`)|5,15|3+1|3 (2 claws, bite)|1d6/1d6/1d10|F2|8|None|65|LL|82
+Hobgoblin|1d6|4d6|C|MV 90` (30`)|6,14|1+1|1 (weapon)|1d8 or weapon|F1|8|XIX|15|LL|82
+Homunculus|1|0|As creator|MV 60` (20`) Fly 180` (60`)|6,14|2|1 (bite)|1d3|As creator|11|None|38|AEC|129
+Horse, Draft|0|0|N|MV 90` (30`)|7,13|3|None|None|F2|6|None|50|LL|82
+Horse, Riding|0|1d10x10|N|MV 240` (80`)|7,13|2|2 (hooves)|1d4/1d4|F1|7|None|20|LL|82
+Horse, War|0|0|N|MV 120` (40`)|7,13|3|2 (hooves)|1d6/1d6|F2|9|None|50|LL|82
+Hydra|1|1|N|MV 120` (40`)|5,15|5-12|Per head|1d10 per head|F5 to F12|9|XXI|As HD|LL|82
+Hyena|2d6|2d6|N|MV 120` (40`)|7,13|3|1 (bite)|2d4|F3|9|None|50|AEC|129
+Hyena, Giant|2d4|2d4|N|MV 120` (40`)|7,13|5|1 (bite)|3d4|F5|9|None|200|AEC|129
+Insect Swarm|1 swarm|3 swarms|N|MV 30` (10`) Fly 60` (20`)|7,13|2-4|1|2 hp|0 human|11|None|29; 65; 135|LL|83
+Invisible Stalker|1|1|N|MV 120` (40`)|3,17|8|1|4d4|F8|12|None|215|LL|83
+Jackal|1d6|2d4|N|MV 150` (50`)|7,13|1d4 hp|1 (bite)|1d2|F1|7|None|5|AEC|129
+Jackalwere|1d4|1d4|CE|MV 120` (40`)|4,16|4|1 (bite or weapon)|2d4 or weapon|F4|9|XXII|190|AEC|129
+Kobold|4d4|6d10|C|MV 60` (20`)|7,13|1d4 hp|1 (weapon)|1d4 or weapon -1|0 human|6|I (XIII)|5|LL|83
+Lamia|1|1|CE|MV 240` (80`)|3,17|9|1 (weapon)|1d6|F9|9|XXII|4,500|AEC|129
+Lammasu|2d4|2d4|LG|MV 120` (40`) Fly 240` (80`)|6,14|7+7|2 (claws)|1d6/1d6|F7|9|VIII|1,300|AEC|130
+Leech, Giant|0|1d4|N|MV 120` (40`)|7,13|6|1 (drain blood)|1d6|F3|10|None|570|LL|84
+Leprechaun|1|1d20|N|MV 150` (50`)|8,12|1d4+1 hp|0|Special|M1|6|XVII|6|AEC|130
+Lich (Undead)|1|1|NE|MV 60` (20`)|0,20|12+|1 (cold touch)|1d10 cold damage|M18+|9|XXII|4,400|AEC|130
+Lizard, Giant Draco|1d4|1d8|N|MV 120` (40`) Fly 210` (70`)|5,15|4+2|1 (bite)|1d10|F3|7|VI|215|LL|84
+Lizard, Giant Gecko|1d6|1d10|N|MV 120` (40`)|5,15|3+1|1 (bite)|1d8|F2|7|VI|100|LL|84
+Lizard, Giant Horned Chameleon|1d3|1d6|N|MV 120` (40`)|5,15|5|2 (bite, horn)|2d4/1d6|F3|7|VI|800|LL|84
+Lizard, Giant Tuatara|1d2|1d4|N|MV 90` (30`)|4,16|6|3 (2 claws, bite)|1d4/1d4/1d6|F4|6|VII|570|LL|84
+Lizardfolk|2d4|6d6|N|MV 60` (20`)|5,15|2+1|1 (weapon)|1d6+1 or weapon +1|F2|12|XIX|47|LL|84
+Locathah|3d4|2d10x10|N|MV 120` (40`)|6,14|2|1 (weapon)|As weapon|F2|9|XXII|20|AEC|131
+Locust, Subterranean|2d10|1d10|N|MV 60` (20`) Fly 180` (60`)|4,16|2|1 (bite, slam, or spit)|1d2/1d4 or special|F2|5|None|38|LL|85
+Lurker Above|1|1d4|N|MV 10` (3`) Fly 90` (30`)|6,14|10|1|1d6|F10|12|XXI|1,700|AEC|131
+Lycanthrope, Werebear|1d4|1d4|N|MV 120` (40`)|2 (8)2 (8),--|6|3 (2 claws, bite)|2d4/2d4/2d8|F6|10|XX|1,070|LL|85
+Lycanthrope, Wereboar|1d4|2d4|N|MV 150` (50`)|4 (9)4 (9),--|4+1|1 (tusk bite)|2d6|F4|9|XX|365|LL|85
+Lycanthrope, Wererat|1d8|2d6|C|MV 120` (40`)|7 (9)7 (9),--|3|1 (bite or weapon)|1d4 or weapon|F3|8|XX|95|LL|85
+Lycanthrope, Weretiger|1d4|1d4|N|MV 150` (50`)|3 (9)3 (9),--|5|3 (2 claws, bite)|1d6/1d6/2d6|F5|9|XX|650|LL|85
+Lycanthrope, Werewolf|1d6|2d6|C|MV 180` (60`)|5 (9)5 (9),--|4|1 (bite)|2d4|F4|8|XX|190|LL|85
+Manticore|1d2|1d4|C|MV 120` (40`) Fly 180` (60`)|4,16|6+1|3 (2 claws, bite) or 1 (spikes)|1d4/1d4/2d4 or 1d6|F6|9|XIX|980|LL|86
+Mastodon|0|2d8|N|MV 120` (40`)|3,17|15|2 (tusks) or 1 (trample)|2d6/2d6 or 4d8|F8|8|None|3,300|LL|86
+Medusa|1d3|1d4|C|MV 90` (30`)|8,12|4|1 (snakebite or gaze)|1d6 and poison or petrify|F4|8|XVII|245|LL|87
+Men, Berserker|1d6|3d10|N|MV 120` (40`)|7,13|1+1|1|1d6 or weapon|F1|N/A|I (XXI)|21|LL|87
+Men, Brigand|0|1d4x10|N or C|MV 120` (40`)|Armor typeArmor type,--|1|1|1d6 or weapon|F1|8|XXII|10|LL|87
+Men, Merchant|0|1d20|N|MV 90` (30`)|5,15|1|1|1d6 or weapon|F1|Varies|XXII|10|LL|87
+Men, Nomad|0|1d4x10|N|MV 120` (40`)|Armor typeArmor type,--|1|1|1d6 or weapon|F1|8|XXII|10|LL|87
+Men, Pirate|0|special|C|MV 120` (40`)|Armor typeArmor type,--|1|1|1d6 or weapon|F1|6|XXII|10|LL|87
+Merfolk|0|1d20|N|MV Swim 120` (40`)|6,14|1-4|1|1d6 or weapon|F1|8|XXII|20|LL|88
+Mimic|1|1|N|MV 30` (`10)|7,13|7-10|1|3d4|F7-10|8|None|790|AEC|131
+Minotaur|1d6|1d8|C|MV 120` (40`)|6,14|6|2 or 1 (gore and bite, or weapon)|1d6/1d6 or weapon|F6|12|XXII|820|LL|88
+Morlock|1d12|5d10|C|MV 120` (40`)|8,12|1|1|1d6 or weapon|F1|9|XX|5|LL|88
+Mule|1d8|2d6|N|MV 120` (40`)|7,13|2|1 (kick or bite)|1d4 or 1d3|0 human|8|None|20|LL|88
+Mummy (Undead)|1d4|1d12|C|MV 60` (20`)|3,17|5+1|1|1d12 disease|F5|12|XIX|860|LL|89
+Naga, Guardian|1d2|0|L|MV 150` (50`)|3,17|11-12|2 (bite, constrict)|1d6/2d4|F11-12|11|XXII|2,800|AEC|131
+Naga, Spirit|1d3|0|C|MV 120` (40`)|4,16|9-10|1 (bite)|1d3|F9-10|8|VIII|2,400|AEC|131
+Naga, Water|1d4|0|N|MV 90` (30`) Swim 180` (60`)|5,15|7-8|1 (bite)|1d4|F7-8|8|XIX|1,140|AEC|131
+Neanderthal|1d10|4d10|L|MV 120` (40`)|8,12|2|1|2d4 or weapon|F2|7|XX|20|LL|89
+Night Hag|1|1|NE|MV 90` (30`)|9,11|8|1|2d6|F8|8|None|1,560|AEC|132
+Nightmare|1|0|CE|MV 150` (50`) Fly 360` (120`)|-4,24|6+6|3 (bite, 2 hooves)|2d4/1d6+4/1d6+4|F6|10|None|980|AEC|132
+Nixie|0|2d20|N|MV Swim 120` (40`)|7,13|1|1|1d4|E1|6|XXI|16|LL|89
+Nymph|0|1d4|NG|MV 120` (40`)|9,11|3|0|if seen (SV spell or permanent blindness)|F3|6|IX|80|AEC|132
+Ochre Jelly|1|0|N|MV 30` (10`)|8,12|5|1|2d6|F3|12|None|500|LL|89
+Octopus, Giant|0|1d2|N|MV Swim 90` (30`)|7,13|8|8 (tentacles) or 1 (bite)|1d3 (per tentacle)/1d6|F4|7|None|2,060|LL|90
+Ogre|1d6|2d6|C|MV 90` (30`)|5,15|4+1|1 (club)|1d10|F4|10|XX + 1|215|LL|90
+Ogre Mage|1d5|1d6|LE|MV 90` (30`) Fly 150` (50`)|4,16|5+2|1|1d12|M5|9|IX|660|AEC|132
+Orc|2d4|1d6x10|C|MV 120` (40`)|6,14|1|1 (weapon)|1d6 or weapon|F1|8|XIX|10|LL|90
+Otyugh|1|2|N|MV 60` (20`)|3,17|6-8|3 (2 tentacles, bite)|1d8/1d8/1d4+1|F6-8|10|None|820/1,140/1,560|AEC|133
+Otyugh, Advanced|1|1|N|MV 60` (20`)|0,20|9-12|3 (2 tentacles, bite)|2d6/2d6/2d4|F9-12|9|None|2,400/2,800|AEC|133
+Owl Bear|1d4|1d4|N|MV 120` (40`)|5,15|5|3 (2 claws, bite)|1d8/1d8/1d8|F3|9|XX|350|LL|91
+Owl, Giant|1d4+1|1d4+1|N|MV 30` (10`) Fly 180` (60`)|6,14|4|3 (2 talons, beak)|2d4/2d4/1d4+1|F4|8|XIx5|80|AEC|133
+Pegasus|0|1d12|L|MV 240` (80`) Fly 480` (160`)|6,14|2+2|2 (hooves)|1d6/1d6|F2|8|None|47|LL|91
+Phase Tiger|1d4|1d4|N|MV 150` (50`)|4,16|6|2 (tentacles)|2d4/2d4|F6|8|XIX|570|LL|91
+Piercer|3d6|3d6|N|MV 10` (3`)|3,17|1-4|1|1d6 per HD|F1-4|10|None|10; 20; 50; 80|AEC|133
+Pixie|2d4|1d4x10|N|MV 90` (30`) Fly 180` (60`)|3,17|1|1 (dagger)|1d4|E1|7|III + IV|16|LL|91
+Pseudo-dragon|1|1|NG|MV 60` (20`) Fly 240` (80`)|2,18|2|1 (bite or tail)|1d3 or SV poison or feign death|F2|7|XIx10|38|AEC|134
+Purple Worm|1d2|1d4|N|MV 60` (20`)|6,14|15|2 (bite, sting)|2d8/1d8/poison|F8|10|XIX|3,300|LL|92
+Rakshasa|1d4|1d4|LE|MV 150` (50`)|-4,24|7|3 (2 claws, bite)|1d3/1d3/1d4+1|F7|9|XVIII|1,840|AEC|134
+Rat|5d10|2d10|N|MV 60` (20`) Swim 30` (10`)|9,11|1 hp|1 (bite, per group)|1d6 + disease|0 human|5|XI|6|LL|92
+Rat, Giant|3d6|3d10|N|MV 120` (40`) Swim 60` (20`)|7,13|1d4 hp|1 (bite)|1d3 + disease|F1|8|XX|6|LL|92
+Remorhaz|1|1|N|MV 120` (40`)|0/belly 4/head 20/belly 4/head 2,--|7-14|1 (bite)|6d6|F7-14|10|XVIII|1,140|AEC|134
+Rhagodessa, Giant|1d4|1d6|N|MV 150` (50`)|5,15|4+2|1 (leg or bite)|0 or 2d8|F2|9|VI|215|LL|92
+Rhinoceros|0|1d12|N|MV 120` (40`)|5,15|6|1 (butt or trample)|2d4 or 2d8|F3|6|None|570|LL|93
+Rhinoceros, Woolly|0|1d8|N|MV 120` (40`)|4,16|8|1 (butt or trample)|2d6 or 2d12|F4|6|None|1,060|LL|93
+Roc, Giant|0|1|L|MV 60` (20`) Fly 480` (160`)|0,20|36|3 (2 claws, bite)|3d6/3d6/8d6|F9|10|XIV|6,750|LL|93
+Roc, Large|0|1d8|L|MV 60` (20`) Fly 480` (160`)|2,18|12|3 (2 claws, bite)|1d8/1d8/2d10|F6|9|XIV|1,200|LL|93
+Roc, Small|0|1d12|L|MV 60` (20`) Fly 480` (160`)|4,16|6|3 (2 claws, bite)|1d4+1/1d4+1/2d6|F3|8|XIV|320|LL|93
+Roper|1d3|1d3|CE|MV 30` (10`)|0,20|10-12|1|5d4|F10-12|8|Vx2|2,400|AEC|135
+Rot Grub|0|5d4|N|MV 10` (2`)|9,11|1 hp|special|special|0 human|N/A|None|5|LL|93
+Rust Monster|1d4|1d4|N|MV 120` (40`)|2,18|5|1|special|F3|7|None|500|LL|93
+Sahuagin|4d4|3d4x10|LE|MV 120` (40`) Swim 240` (80`)|5,15|2+2|3 (2 claws, bite) or 1 (weapon)|1d2/1d2/1d4 or As weapon|F2|8|V|47|AEC|135
+Salamander, Flame|1d4+1|2d4|N|MV 120` (40`)|2,18|8|3 (2 claws, bite)|1d4/1d4/1d8|F8|8|XVII|2,060|LL|94
+Salamander, Frost|1d3|1d3|C|MV 120` (40`)|3,17|12|5 (4 claws, bite)|1d6 (per claw)/2d6|F8|8|XVIII|3,600|LL|94
+Satyr|2d4|2d4|N|MV 180` (60`)|5,15|5|1 (horns)|2d4|F5|7|IX|350|AEC|135
+Scorpion, Giant|1d6|1d6|C|MV 150` (50`)|2,18|4|3 (2 claws, sting)|1d10/1d10/1d4 + poison|F2|11|VII|190|LL|94
+Sea Hag|1d4|1d4|CE|MV 150` (50`)|7,13|3|1 (dagger)|1d4 (dagger)|F3|7|XIV|95|AEC|135
+Sea Serpent|0|2d6|N|MV Swim 150` (50`)|5,15|6|1 (bite or constrict)|2d6 or special|F3|8|None|570|LL|94
+Shadow|1d8|1d12|C|MV 90` (30`)|7,13|2+2|1|1d4 + special|F2|12|XVII|83|LL|94
+Shambling Mound|1d3|1d3|N|MV 60` (20`)|0,20|8-11|2|2d8/2d8|F8-11|12|VIII|1,820|AEC|136
+Shark, Bull|0|3d6|N|MV Swim 180` (60`)|4,16|2|1 (bite)|2d4|F1|7|None|29|LL|95
+Shark, Giant|1d3|1d3|N|MV 180` (60`)|5,15|10-15|1 (bite)|4d4(10-11HD)/5d4(12-13 HD)/6d4 (14-15 HD)|F10-15|10|None|1,700|AEC|136
+Shark, Great White|0|1d4|N|MV Swim 180` (60`)|4,16|8|1 (bite)|2d10|F4|7|None|1,060|LL|95
+Shark, Mako|0|2d6|N|MV Swim 180` (60`)|4,16|4|1 (bite)|2d6|F2|7|None|135|LL|95
+Shrew, Giant|1d4|1d8|N|MV 180` (60`)|4,16|1|2 (bite)|1d6/1d6|F1|10|None|19|LL|95
+Shrieker|1d8|0|N|MV 9` (3`)|7,13|3|special|special|F1|12|None|65|LL|95
+Skeleton (Undead)|3d4|3d10|C|MV 60` (20`)|7,13|1|1|1d6 or weapon|F1|12|None|13|LL|95
+Slithering Tracker|1|1|N|MV 120` (40`)|5,15|5|0|If victim sleeps SV paralyze|F5|10|XX|500|AEC|136
+Slug, Giant|1|1|N|MV 60` (20`)|8,12|12|1 (bite)|1d12|F12|10|None|2,000|AEC|136
+Snake, Giant Python|1d3|1d3|N|MV 90` (30`)|6,14|5|2 (bite, constrict)|1d4/2d8|F3|8|VI|350|LL|96
+Snake, Giant Rattler|1d4|1d4|N|MV 120` (40`)|5,15|4|2 (bite)|1d4 + poison|F2|8|VI|135|LL|96
+Snake, Pit Viper|1d8|1d8|N|MV 90` (30`)|6,14|2|1 (bite)|1d4 + poison|F1|7|None|38|LL|96
+Snake, Sea|1d8|1d8|N|MV 90` (30`)|6,14|3|1 (bite)|1 + poison|F2|7|None|65|LL|96
+Snake, Spitting Cobra|1d6|1d6|N|MV 90` (30`)|7,13|1|1 (bite or spit)|1d3 + poison|F1|7|None|13|LL|96
+Spectre (Undead)|1d4|1d8|C|MV 150` (50`)|2,18|6|1 (touch)|1d8 + drain level|F6|11|XVIII|1,070|LL|96
+Sphinx, Androsphinx|1|1|CG|MV 180` (60`) Fly 300` (100`)|-2,22|12|2 (claws)|2d6/2d6|F12|9|XVI|3,600|AEC|137
+Sphinx, Criosphinx|1d4|1d4|N|MV 120` (40`) Fly 240` (80`)|0,20|10|3 (2 claws, head butt)|2d4/2d4/3d6|F10|9|XVIII|1,700|AEC|137
+Sphinx, Gynosphinx|1|1|N|MV 150` (50`) Fly 240` (80`)|-1,21|8|2 (claws)|2d4/2d4|F8|9|X|1,560|AEC|137
+Sphinx, Hieracosphinx|1d6|1d6|CE|MV 90` (30`) Fly 360` (120`)|1,19|9|3 (2 claws, beak)|2d4/2d4/1d10|F9|10|XVIII|1,700|AEC|137
+Spider, Giant Black Widow|1d3|1d3|N|MV 60` (20`) Web 120` (40`)|6,14|3|1 (bite)|2d6 + poison|F2|8|VI|80|LL|97
+Spider, Giant Crab Spider|1d4|1d4|N|MV 120` (40`)|7,13|2|1 (bite)|1d8 + poison|F1|7|VI|38|LL|97
+Spider, Giant Tarantula|1d3|1d3|N|MV 120` (40`)|5,15|4|1 (bite)|1d8 + poison|F2|8|VI|135|LL|97
+Spider, Phase|1d4|1d4|N|MV 60` (20`) On web 150` (50`)|7,13|5+5|1 (bite)|1d6 SV poison or die|F5|8|XVIII|660|AEC|137
+Sprite|3d6|3d6|N|MV 60` (20`) Fly 180` (60`)|5,15|1d4 hp|1 (spell)|special|E1|7|IV|6|LL|97
+Squid, Giant|0|1d4|N|MV Swim 120` (40`)|7,13|6|9 (8 tentacles, bite)|1d4 (all tentacles)/1d10|F3|7 (9)|VII|1,070|LL|97
+Statue, Animate Crystal|1d6|1d6|L|MV 90` (30`)|4,16|3|2 (fists)|1d6/1d6|F3|11|None|65|LL|98
+Statue, Animate Iron|1d4|1d4|N|MV 30` (10`)|4,16|4|2 (fists)|1d8/1d8|F4|11|None|190|LL|98
+Statue, Animate Stone|1d3|1d3|C|MV 60` (20`)|4,16|5|2 (fists)|2d6/2d6|F5|11|None|500|LL|98
+Stirge|1d10|3d12|N|MV 30` (10`) Fly 180` (60`)|7,13|1|1|1d3|F2|9|XI|16|LL|98
+Strangle Weed|3d4|3d4|N|MV None|6,14|2-4|1|Special|F2-4|N/A|I|29|AEC|138
+Throghrin|1d6|1d10|C|MV 120` (40`)|6,14|3|2 or 1 (2 claws or weapon)|1d3/1d3 or weapon|F3|10|XX|80|LL|98
+Tick, Giant|3d4|3d4|N|MV 30` (10`)|3,17|2-4|1|1d4|F2-4|8|None|29|AEC|138
+Titan|1d2|1d2|CG|MV 210` (70`) or 150` (50`)|2 to -32 to -3,--|17-22|1 (fist)|7d6 or 8d6|F17-22|10|X|4,250/7,000|AEC|138
+Toad, Giant|1d4|1d4|N|MV 90` (30`)|7,13|2+2|1 (bite)|1d4+1|F1|6|None|71|LL|99
+Toad, Giant Ice|1d4|1d4|N|MV 90` (30`)|4,16|5|1 (bite)|3d4|F5|7|XIV|500|AEC|138
+Toad, Giant Poisonous|1d4|1d4|N|MV 90` (30`)|7,13|2+2|1 (bite)|1d4+1 SV poison or die|F1|6|None|59|AEC|138
+Trapper|1|1|N|MV 30` (10`)|3,17|12|1 (squeeze)|1d6|F12|10|XVII|2,000|AEC|139
+Treant|0|1d8|L|MV 60` (20`)|2,18|8|2|2d6/2d6|F8|6|XX|1,560|LL|99
+Triton|3d4|2d6x10|NG|MV Swim 150` (50`)|5,15|3|1 (weapon)|As weapon|F3|7|VIII|50|AEC|139
+Troglodyte|1d8|5d8|C|MV 120` (40`)|5,15|2|3 (2 claws, bite)|1d4/1d4/1d4|F2|9|XXII|38|LL|100
+Troll|1d8|1d8|C|MV 120` (40`)|4,16|6+3|3 (2 claws, bite)|1d6/1d6/1d10|F6|10|XIX|600|LL|100
+Turtle, Giant Sea|1d3|1d3|N|MV 10` (3`) Swim 150` (50`)|2 (head/flippers 5)2 (head/flippers 5),--|15|1 (bite)|4d4|F15|6|None|1,500|AEC|139
+Turtle, Giant Snapping|1d4|1d4|N|MV 30` (10`) Swim 120` (40`)|0 (head/flippers 5)0 (head/flippers 5),--|10|1 (bite)|6d4|F10|9|None|1,700|AEC|139
+Unicorn|1d6|1d8|L|MV 240` (80`)|2,18|4|3 (2 hooves, horn)|1d8/1d8/1d8|F8|7|None|135|LL|100
+Vampire (Undead)|1d4|1d6|C|MV 120` (40`) Fly 180` (60`)|2,18|7-9|1 (touch or special)|1d10 or drain life energy|F7 to F9|11|XVII|3,150/5,060/7,300|LL|101
+Wasp, Giant|1d20|1d20+20|N|MV 60` (20`) Fly 210` (70`)|4,16|4|2 (bite, sting)|2d4/1d4 sting SV poison or paralyze|F4|10|XIx15|135|AEC|140
+Weasel, Giant|1d4|1d6|N|MV 150` (50`)|7,13|4+4|1 (bite)|2d4|F3|8|VII|290|LL|101
+Whale, Killer|0|1d6|N|MV 240` (80`)|6,14|6|1 (bite)|1d20|F3|10|VII|570|LL|102
+Whale, Narwhal|0|1d4|L|MV 180` (60`)|7,13|12|2 (bite, horn)|2d6/1d8|F12|8|None|1,200|LL|102
+Whale, Sperm|0|1d3|N|MV 180` (60`)|6,14|36|1 (bite)|3d20|F15|7|VII|12,500|LL|102
+Wight (Undead)|1d6|1d8|C|MV 90` (30`)|5,15|3|1|drain life energy|F3|12|XXI|110|LL|102
+Will-O-Wisp|1|1d3|CE|MV 180` (60`)|-8,28|9|1|2d8|F9|7|XVIII|3,100|AEC|140
+Wind Walker|1d3|1d3|N|MV 150` (50`) Fly 300` (100`)|7,13|6+3|1|3d6|F6|9|XXII|680|AEC|140
+Wolf|2d6|3d6|N|MV 180` (60`)|7,13|2+2|1 (bite)|1d6|F1|8|None|35|LL|102
+Wolf, Dire|1d4|2d4|N|MV 150` (50`)|6,14|4+1|1 (bite)|2d4|F2|8|None|140|LL|102
+Wolf, Winter|2d4|2d4|NE|MV 180` (60`)|5,15|6|1 (bite) or 1 (breathe)|2d4 or 6d4 breathe (SV breath attacks for half damage)|F6|10|XIV|820|AEC|140
+Wolverine|1|1d3|N|MV 120` (40`)|5,15|3|3 (2 claws, bite)|1d4/1d4/1d4+1|F3|10|None|80|AEC|141
+Wolverine, Giant|1|1d3|N|MV 150` (50`)|4,16|4+4|3 (2 claws, bite)|1d4+1/1d4+1/2d4|F4|11|None|290|AEC|141
+Wraith (Undead)|1d4|1d6|C|MV 120` (40`) Fly 240` (80`)|3,17|4|1 (touch)|1d6 + drain life energy|F4|12|XVIII|300|LL|102
+Wyvern|1d2|1d6|C|MV 90` (30`) Fly 240` (80`)|3,17|7|2 (bite, sting)|2d8/2d8 + poison|F4|9|XVIII|1,140|LL|103
+Xorn|1d4|1d4|N|MV 90` (30`)|-2,22|7+7|4 (3 claws, bite)|1d3/1d3/1d3/6d4|F7|10|XIx3|1,700|AEC|141
+Yellow Mold|1d8|1d4|N|MV 0|NANA,--|2|Spores|1d6 + special|F2|NA|None|38|LL|103
+Yeti|1d6|2d4|N|MV 150` (50`)|6,14|4+4|2 (claws)|1d6/1d6|F4|8|XX|38|AEC|141
+Zombie (Undead)|2d4|4d6|C|MV 120` (40`)|8,12|2|1|1d8 or weapon|F1|12|None|29|LL|103

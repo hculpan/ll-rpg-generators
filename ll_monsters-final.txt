@@ -108,10 +108,18 @@ Ear Seeker,1d4,1d4,N,MV 10` (3`),9,11,1 hp,Special,Special,F1,N/A,None,5,AEC,123
 "Eel, Giant",1d4,1d4,N,MV 90` (30`),6,14,5,1 (bite),3d6,F5,8,None,200,AEC,123
 "Eel, Sea",1d6x10,1d6x10,N,MV 150` (50`),8,12,1 -1,1 (bite),1,F1,7,"X, XII, XIII",6,AEC,123
 Efreeti,1,1,C,MV 90` (30`),3,17,10,1,2d8,F15,12,None,"4,500",LL,73
-"Elemental, Air",1,1,N,MV Fly 360` (120`),2/0/-22/0/-2,--,8/12/16,special,1d8 or 2d8 or 3d8,F8-16,10,None,"1,570/2,800/3,300",LL,73
-"Elemental, Earth",1,1,N,MV 60` (20`),2/0/-22/0/-2,--,8/12/16,special,1d8 or 2d8 or 3d8,F8-16,10,None,"1,570/2,800/3,300",LL,73
-"Elemental, Fire",1,1,N,MV 120` (40`),2/0/-22/0/-2,--,8/12/16,special,1d8 or 2d8 or 3d8,F8-16,10,None,"1,570/2,800/3,300",LL,73
-"Elemental, Water",1,1,N,MV 60` (20`) Swim 180` (60`),2/0/-22/0/-2,--,8/12/16,special,1d8 or 2d8 or 3d8,F8-16,10,None,"1,570/2,800/3,300",LL,73
+"Elemental, Air (8 HD)",1,1,N,MV Fly 360` (120`),2,18,8,special,1d8,F8,10,None,"1,570",LL,73
+"Elemental, Air (12 HD)",1,1,N,MV Fly 360` (120`),0,20,12,special,2d8,F12,10,None,"2,800",LL,73
+"Elemental, Air (16 HD)",1,1,N,MV Fly 360` (120`),-2,22,16,special,3d8,F16,10,None,"3,300",LL,73
+"Elemental, Earth (8 HD)",1,1,N,MV 60` (20`),2,18,8,special,1d8,F8,10,None,"1,570",LL,73
+"Elemental, Earth (12 HD)",1,1,N,MV 60` (20`),0,20,12,special,2d8,F12,10,None,"2,800",LL,73
+"Elemental, Earth (16 HD)",1,1,N,MV 60` (20`),-2,22,16,special,3d8,F16,10,None,"3,300",LL,73
+"Elemental, Fire (8 HD)",1,1,N,MV 120` (40`),2,18,8,special,1d8,F8,10,None,"1,570",LL,73
+"Elemental, Fire (12 HD)",1,1,N,MV 120` (40`),0,20,12,special,2d8,F12,10,None,"2,800",LL,73
+"Elemental, Fire (16 HD)",1,1,N,MV 120` (40`),-2,22,16,special,3d8,F16,10,None,"3,300",LL,73
+"Elemental, Water (8 HD)",1,1,N,MV 60` (20`) Swim 180` (60`),2,18,8,special,1d8,F8,10,None,"1,570",LL,73
+"Elemental, Water (12 HD)",1,1,N,MV 60` (20`) Swim 180` (60`),0,20,12,special,2d8,F12,10,None,"2,800",LL,73
+"Elemental, Water (16 HD)",1,1,N,MV 60` (20`) Swim 180` (60`),-2,22,16,special,3d8,F16,10,None,"3,300",LL,73
 Elephant,0,1d20,N,MV 120` (40`),5,15,9,2 or 1 (2 tusks or trample),2d4/2d4 or 4d8,F5,8,None,"2,400",LL,74
 Elf,1d4,2d12,N,MV 120` (40`),5,15,1+1,1 (weapon),1d8 or weapon,E1,8,XVIII,15,LL,74
 "Elf, Deep",1d10,4d12,NE,MV 120` (40`),5,15,1,1 (weapon),As weapon,F1,7,XX,10,AEC,123
