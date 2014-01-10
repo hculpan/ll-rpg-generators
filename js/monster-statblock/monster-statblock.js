@@ -16,6 +16,8 @@ function buildMonsterStatBlock(monsterObject) {
     output += "; D " + monsterObject.get('damage');
     output += "; Save " + monsterObject.get('save');
     output += "; ML " + monsterObject.get('morale');
+    output += "; XP " + monsterObject.get('xp');
+    output += "; THC " + monsterObject.get('hoard_class');
 
     return output;
 }
