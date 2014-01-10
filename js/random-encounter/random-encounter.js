@@ -2,9 +2,9 @@
  * Created by harry on 1/7/14.
  */
 
-randomEncounterTables = new Object();
+wildernessEncounterTables = new Object();
 
-menTable = new Table([
+/*menTable = new Table([
     "Men, Berserker",
     "Men, Brigand",
     "Men, Brigand",
@@ -117,23 +117,141 @@ westholmeRandomEncounterTable = new Table([
     "Animal",
     "Animal",
     "Undead"
-]);
+]);*/
 
 $(document).ready(function() {
-    randomEncounterTables["Men"] = menTable;
-    randomEncounterTables["Humanoid"] = humanoidTable;
-    randomEncounterTables["Flyer"] = flyerTable;
-    randomEncounterTables["Insect"] = insectTable;
-    randomEncounterTables["Unusual"] = unusualTable;
-    randomEncounterTables["Animal"] = animalTable;
-    randomEncounterTables["Undead"] = undeadTable;
+    wildernessEncounterTables["Desert"] = new Table([
+        "Beetle, Giant Fire",
+        "Beetle, Giant Spitting",
+        "Blink Dog",
+        "Camel",
+        "Cat, Lion",
+        "Dragon, Blue",
+        "Dragon, Red",
+        "Goblin",
+        "Hawk, Giant",
+        "Hobgoblin",
+        "Lizard, Giant Gecko",
+        "Lizard, Giant Tuatara",
+        "Men, Nomad",
+        "Mummy (Undead)",
+        "NPC Party",
+        "Ogre",
+        "Scorpion, Giant",
+        "Snake, Pit Viper",
+        "Snake, Giant Rattler",
+        "Spider, Giant Tarantula"
+    ]);
+
+    wildernessEncounterTables["Forest/Wooded"] = new Table([
+        "Bee, Giant Killer",
+        "Boar",
+        "Bugbear",
+        "Cat, Panther",
+        "Cockatrice",
+        "Dryad",
+        "Dragon, Green",
+        "Elf",
+        "Ghoul (Undead)",
+        "Hobgoblin",
+        "Lycanthrope, Werewolf",
+        "Men, Brigand",
+        "Orc",
+        "Roc, Small",
+        "Spider, Giant Crab",
+        "Troll",
+        "Unicorn",
+        "Wight (Undead)",
+        "Wolf",
+        "Wolf, Dire"
+    ]);
+
+    wildernessEncounterTables["Grassland"] = new Table([
+        "Ant, Giant",
+        "Baboon, Higher",
+        "Boar",
+        "Dragon, Green",
+        "Fly, Giant Carnivorous",
+        "Giant, Hill",
+        "Halfling",
+        "Hippogriff",
+        "Horse, Riding (wild)",
+        "Men, Merchant",
+        "Men, Nomad",
+        "Ogre",
+        "Orc",
+        "Scorpion, Giant",
+        "Spider, Giant Black Widow",
+        "Stirge",
+        "Troll",
+        "Throghrin",
+        "Weasel, Giant",
+        "Wyvern"
+    ]);
+
+    wildernessEncounterTables["Inhabited Lands"] = new Table([
+        "Dragon, Gold",
+        "Dwarf",
+        "Elf",
+        "Gargoyle",
+        "Giant, Hill",
+        "Goblin",
+        "Halfling",
+        "Lycanthrope, Weretiger",
+        "Men, Brigand",
+        "Men, Merchant",
+        "Special:NPC Party",
+        "Ogre",
+        "Orc",
+        "Rat, Giant",
+        "Rhagodessa",
+        "Skeleton",
+        "Werewolf",
+        "Vampire",
+        "Wight",
+        "Zombie"
+    ]);
+
+    wildernessEncounterTables["Jungle"] = new Table([
+        "Ant, Giant",
+        "Bugbear",
+        "Cat, Panther",
+        "Dragon, Green",
+        "Elephant",
+        "Fly, Giant Carnivorous",
+        "Giant, Fire",
+        "Gnoll",
+        "Gray Worm",
+        "Lizardfolk",
+        "Lycanthrope, Wereboar",
+        "Medusa",
+        "Men, Brigand",
+        "Men, Merchant",
+        "Neanderthal",
+        "Phase Tiger",
+        "Rat, Giant",
+        "Scorpion, Giant",
+        "Snake, Giant Python",
+        "Troll"
+    ]);
+
+    $('.selectpicker').selectpicker();
+
+    $("#re-button").removeAttr("disabled");
 });
 
-function checkForEncounter() {
-    if (rollDice(6) == 1) {
-        var rtable = westholmeRandomEncounterTable.getValue();
-        var table = randomEncounterTables[rtable];
-        var monster = table.getValue();
+function isWilderness() {
+    return $('#re-wilderness').prop('checked');
+}
+
+function isForcedEncounter() {
+    return $('#re-force').prop('checked');
+}
+
+function generateEncounter() {
+    if (isWilderness()) {
+        var terrain = $("#re-terrain").val();
+        var monster = wildernessEncounterTables[terrain].getValue();
         if (monster.substr(0, 8) == "Special:") {
             $('#re-result').html("You encountered " + monster.substr(8));
         } else {
@@ -142,7 +260,19 @@ function checkForEncounter() {
             query.equalTo("name", monster);
             query.find({
                 success: function(results) {
-                    $("#re-result").html(buildMonsterStatBlock(results[0]));
+                    var mObject = results[0];
+                    if (mObject == undefined) {
+                        $('#re-result').html("Rolled " + monster + " but cannot retrieve stats");
+                    } else {
+                        var numEncountered = mObject.get('enc_lair');
+                        console.log(mObject.get('name') + ": " + numEncountered);
+                        if (numEncountered == "0") {
+                            console.log('invalid encounter, try again...');
+                            generateEncounter();
+                        } else {
+                            $("#re-result").html(buildMonsterStatBlock(mObject));
+                        }
+                    }
                 },
                 error: function(error) {
                     alert("Error: " + error.code + " " + error.message);
@@ -150,6 +280,16 @@ function checkForEncounter() {
             });
         }
     } else {
-        $("#re-result").html("No encounter");
+
+    }
+}
+
+function checkForEncounter() {
+    $("#re-result").html("");
+    var roll = rollDice(6);
+    if (isForcedEncounter() || roll == 1) {
+        generateEncounter();
+    } else {
+        $("#re-result").html("No encounter (rolled " + roll + ")");
     }
 }
