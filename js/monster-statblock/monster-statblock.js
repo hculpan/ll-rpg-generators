@@ -20,9 +20,7 @@ function buildMonsterStatBlock(monsterObject) {
     return output;
 }
 
-function monsterClicked(monster) {
-//    $("#ms-result").html("Got event for " + monster); // + event.text());
-    $("#ms-dropdownbutton").html(monster + "  <span class='caret'></span>");
+function monsterSelected(monster) {
     var Monster = Parse.Object.extend("monsters");
     var query = new Parse.Query(Monster);
     query.equalTo("name", monster);
@@ -36,6 +34,8 @@ function monsterClicked(monster) {
     });
 }
 
+monstersArray = new Array();
+
 $(document).ready(function() {
     var Monster = Parse.Object.extend("monsters");
     var query = new Parse.Query(Monster);
@@ -47,15 +47,21 @@ $(document).ready(function() {
             var buttonSet = false;
             for (var i = 0; i < results.length; i++) {
                 var name = results[i].get('name');
-                $('#ms-monsters').append("<li><a href='javascript:monsterClicked(\"" + name + "\");'>" + name + "</a></li>");
-                if (!buttonSet) {
-                    $("#ms-dropdownbutton").html(name + "  <span class='caret'></span>");
-                    buttonSet = true;
-                }
+                monstersArray.push(name);
             }
+
+            $('.ms-searchablelist .typeahead').typeahead({
+                name: 'monsters',
+                local: monstersArray,
+                limit: 20
+            });
         },
         error: function(error) {
             alert("Error: " + error.code + " " + error.message);
         }
+    });
+
+    $('.ms-searchablelist .typeahead').on('typeahead:selected', function (object, datum) {
+        monsterSelected(datum.value.toString());
     });
 })
