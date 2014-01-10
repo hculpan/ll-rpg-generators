@@ -3,6 +3,7 @@
  */
 
 wildernessEncounterTables = new Object();
+dungeonEncounterTables = new Object();
 
 $(document).ready(function() {
     wildernessEncounterTables["Desert"] = new Table([
@@ -240,6 +241,156 @@ $(document).ready(function() {
         "Zombie (Undead)"
     ]);
 
+    dungeonEncounterTables["1"] = new Table([
+        "Bee, Giant Killer",
+        "Beetle, Giant Fire",
+        "Centipede, Giant",
+        "Dwarf",
+        "Gnome",
+        "Goblin",
+        "Green Slime",
+        "Halfling",
+        "Kobold",
+        "Lizard, Giant Gecko",
+        "Morlock",
+        "Orc",
+        "Rat, Giant",
+        "Snake, Spitting Cobra",
+        "Skeleton (Undead)",
+        "Spider, Giant Crab",
+        "Stirge",
+        "Toad, Giant",
+        "Wolf",
+        "Zombie (Undead)"
+     ])
+
+    dungeonEncounterTables["2"] = new Table([
+        "Bat, Giant",
+        "Baboon, Higher",
+        "Beetle, Giant Spitting",
+        "Cat, Mountain Lion",
+        "Elf",
+        "Ghoul (Undead)",
+        "Gnoll",
+        "Gray Ooze",
+        "Hobgoblin",
+        "Lizard, Giant Draco",
+        "Lizardfolk",
+        "Locust, Subterranean",
+        "Neanderthal",
+        "Pixie",
+        "Snake, Pit Viper",
+        "Spider, Giant Black Widow",
+        "Toad, Giant",
+        "Troglodyte",
+        "Yellow Mold",
+        "Zombie (Undead)"
+    ])
+
+    dungeonEncounterTables["3"] = new Table([
+        "Ant, Giant",
+        "Ape, Albino",
+        "Beetle, Giant Carnivorous",
+        "Bugbear",
+        "Cat, Panther",
+        "Carcass Scavenger",
+        "Doppelganger",
+        "Fly, Giant Carnivorous",
+        "Gargoyle",
+        "Gelatinous Cube",
+        "Harpy",
+        "Lycanthrope, Wererat",
+        "Medusa",
+        "Special:NPC Group",
+        "Ochre Jelly",
+        "Ogre",
+        "Shadow",
+        "Spider, Giant Tarantula",
+        "Throghrin",
+        "Wight (Undead)"
+    ])
+
+    dungeonEncounterTables["4"] = new Table([
+        "Bear, Cave",
+        "Blink Dog",
+        "Cockatrice",
+        "Doppelganger",
+        "Gray Ooze",
+        "Hell Hound",
+        "Lizard, Giant Tuatara",
+        "Lycanthrope, Wereboar",
+        "Lycanthrope, Werewolf",
+        "Minotaur",
+        "Mummy (Undead)",
+        "Special:NPC Group",
+        "Ochre Jelly",
+        "Owl Bear",
+        "Rhagodessa",
+        "Rust Monster",
+        "Spectre (Undead)",
+        "Troll",
+        "Worm, Gray",
+        "Wraith (Undead)"
+    ])
+
+    dungeonEncounterTables["5"] = dungeonEncounterTables["4"];
+
+    dungeonEncounterTables["6"]= new Table([
+        "Basilisk",
+        "Bear, Cave",
+        "Black Pudding",
+        "Dragon, White",
+        "Gorgon",
+        "Hell Hound",
+        "Hydra",
+        "Lycanthrope, Weretiger",
+        "Minotaur",
+        "Mummy (Undead)",
+        "Special:NPC Group",
+        "Ochre Jelly",
+        "Owl Bear",
+        "Phase Tiger",
+        "Rust Monster",
+        "Salamander, Flame",
+        "Scorpion, Giant",
+        "Spectre (Undead)",
+        "Troll",
+        "Worm, Gray"
+    ])
+
+    dungeonEncounterTables["7"] = dungeonEncounterTables["6"];
+
+    dungeonEncounterTables["8"] = new Table([
+        "Black Pudding",
+        "Chimera",
+        "Demon Boar",
+        "Dragon, Black",
+        "Dragon, Blue",
+        "Dragon, Gold",
+        "Dragon, Green",
+        "Dragon, Red",
+        "Giant, Hill",
+        "Giant, Stone",
+        "Golem, Bone",
+        "Golem, Amber",
+        "Hydra",
+        "Lycanthrope, Werebear",
+        "Manticore",
+        "Special:NPC Group",
+        "Purple Worm",
+        "Salamander, Flame",
+        "Salamander, Frost",
+        "Vampire (Undead)"
+    ])
+
+    dungeonEncounterTables["9"] = dungeonEncounterTables["8"];
+    dungeonEncounterTables["10"] = dungeonEncounterTables["8"];
+    dungeonEncounterTables["11"] = dungeonEncounterTables["8"];
+    dungeonEncounterTables["12"] = dungeonEncounterTables["8"];
+    dungeonEncounterTables["13"] = dungeonEncounterTables["8"];
+    dungeonEncounterTables["14"] = dungeonEncounterTables["8"];
+    dungeonEncounterTables["15"] = dungeonEncounterTables["8"];
+
     $('.selectpicker').selectpicker();
 
     $("#re-button").removeAttr("disabled");
@@ -285,7 +436,40 @@ function generateEncounter() {
             });
         }
     } else {
-
+        var level = $("#re-dungeon-level").val().trim();
+        var table = dungeonEncounterTables[level];
+        if (table == undefined) {
+            $('#re-result').html("Invalid dungeon level '" + level + "'");
+        } else {
+            var monster = table.getValue();
+            if (monster.substr(0, 8) == "Special:") {
+                $('#re-result').html("You encountered " + monster.substr(8));
+            } else {
+                var Monster = Parse.Object.extend("monsters");
+                var query = new Parse.Query(Monster);
+                query.equalTo("name", monster);
+                query.find({
+                    success: function(results) {
+                        var mObject = results[0];
+                        if (mObject == undefined) {
+                            $('#re-result').html("Rolled " + monster + " but cannot retrieve stats");
+                        } else {
+                            var numEncountered = mObject.get('enc_dungeon');
+                            console.log(mObject.get('name') + ": " + numEncountered);
+                            if (numEncountered == "0") {
+                                console.log('invalid encounter, try again...');
+                                generateEncounter();
+                            } else {
+                                $("#re-result").html(buildMonsterStatBlock(mObject));
+                            }
+                        }
+                    },
+                    error: function(error) {
+                        alert("Error: " + error.code + " " + error.message);
+                    }
+                });
+            }
+        }
     }
 }
 
