@@ -127,6 +127,8 @@ $(document).ready(function() {
     randomEncounterTables["Unusual"] = unusualTable;
     randomEncounterTables["Animal"] = animalTable;
     randomEncounterTables["Undead"] = undeadTable;
+    
+    $("#re-button").removeAttr("disabled");
 });
 
 function checkForEncounter() {
