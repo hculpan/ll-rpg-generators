@@ -4,25 +4,67 @@
 
 var monsterList = new Object();
 
-function monsterClicked(monster) {
-    $("#ms-result").html("Got event for " + monster); // + event.text());
-    $("#ms-dropdownbutton").html(monster + "  <span class='caret'></span>");
+function buildMonsterStatBlock(monsterObject) {
+    var output = "";
+
+    output += monsterObject.get('name');
+    output += " (" + monsterObject.get('enc_dungeon') + "/" + monsterObject.get('enc_lair') + ")<br>";
+    output += "AC " + monsterObject.get('ac_asc') + " [" + monsterObject.get('ac_desc') + "]";
+    output += "; " + monsterObject.get('move');
+    output += "; HD " + monsterObject.get('hd');
+    output += "; #AT " + monsterObject.get('attacks');
+    output += "; D " + monsterObject.get('damage');
+    output += "; Save " + monsterObject.get('save');
+    output += "; ML " + monsterObject.get('morale');
+
+    return output;
 }
 
+function monsterSelected(monster) {
+    var Monster = Parse.Object.extend("monsters");
+    var query = new Parse.Query(Monster);
+    query.equalTo("name", monster);
+    query.find({
+        success: function(results) {
+            $("#ms-result").html(buildMonsterStatBlock(results[0]));
+        },
+        error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+        }
+    });
+}
+
+monstersArray = new Array();
+
 $(document).ready(function() {
-    jQuery.get('ll_monsters.txt', function(data) {
-        var lines = data.split('\n');
-        var output = "";
-        var buttonSet = false;
-        for (var i = 0; i < lines.length; i++) {
-            var fields = lines[i].split("|");
-            if (fields[0].substr(0, 1) != "#") {
-                $('#ms-monsters').append("<li><a href='javascript:monsterClicked(\"" + fields[0] + "\");'>" + fields[0] + "</a></li>");
+    var Monster = Parse.Object.extend("monsters");
+    var query = new Parse.Query(Monster);
+    query.select("name");
+    query.limit(1000);
+    query.ascending("name");
+    query.find({
+        success: function(results) {
+            var buttonSet = false;
+            for (var i = 0; i < results.length; i++) {
+                var name = results[i].get('name');
+                monstersArray.push(name);
                 if (!buttonSet) {
-                    $("#ms-dropdownbutton").html(fields[0] + "  <span class='caret'></span>");
+                    $("#ms-dropdownbutton").html(name + "  <span class='caret'></span>");
                     buttonSet = true;
                 }
             }
+            $('.ms-searchablelist .typeahead').typeahead({
+                name: 'monsters',
+                local: monstersArray,
+                limit: 20
+            });
+        },
+        error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
         }
+    });
+
+    $('.ms-searchablelist .typeahead').on('typeahead:selected', function (object, datum) {
+        monsterSelected(datum.value.toString());
     });
 })

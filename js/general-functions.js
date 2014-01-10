@@ -20,6 +20,7 @@
             el.load(src);
         });
 
+        Parse.initialize("o5YdoMQL3vAkgZmrebowBWYknxPFAHI1xm0msyIY", "F0TKDNUeFLP9DT5iWWZb3QUDVPQD8y8wKWd7DDd1");
     });
 })(jQuery);
 
