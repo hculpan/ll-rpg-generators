@@ -34,24 +34,108 @@ humanoidTable = new Table([
     "Troll"
 ]);
 
+flyerTable = new Table([
+    "Bat, Giant",
+    "Cockatrice",
+    "Griffon",
+    "Hawk, Giant",
+    "Hippogriff",
+    "Owl, Giant",
+    "Pegasus",
+    "Pixie",
+    "Roc, Small",
+    "Sprite",
+    "Stirge",
+    "Bat"
+]);
+
+insectTable = new Table([
+    "Ant, Giant",
+    "Bee, Giant Killer",
+    "Beetle, Giant Fire",
+    "Beetle, Giant Carnivorous",
+    "Beetle, Giant Rhinocerous",
+    "Carcass Scavanger",
+    "Centipede, Giant",
+    "Fly, Giant Carnivorous",
+    "Rhagodessa, Giant",
+    "Scorpion, Giant",
+    "Spider, Giant Black Widow",
+    "Spider, Giant Crab Spider"
+]);
+
+unusualTable = new Table([
+    "Ape, Albino",
+    "Basilisk",
+    "Blink Dog",
+    "Centaur",
+    "Gorgon",
+    "Hell Hound",
+    "Lycanthrope, Werebear",
+    "Lycanthrope, Wereboar",
+    "Medusa",
+    "Phase Tiger",
+    "Rust Monster",
+    "Skittering Maw",
+    "Treant"
+]);
+
+animalTable = new Table([
+    "Herd Animals",
+    "Bat",
+    "Bear, Grizzly",
+    "Boar",
+    "Cat, Panther",
+    "Hawk",
+    "Owl, Giant",
+    "Snake, Pit Viper",
+    "Spider, Giant Black Widow",
+    "Toad, Giant",
+    "Wolf",
+    "Wolf, Dire"
+]);
+
+undeadTable = new Table([
+    "Ghoul (Undead)",
+    "Ghoul (Undead)",
+    "Mummy (Undead)",
+    "Ghast (Undead)",
+    "Skeleton (Undead)",
+    "Skeleton (Undead)",
+    "Wight (Undead)",
+    "Wraith (Undead)",
+    "Zombie (Undead)",
+    "Zombie (Undead)"
+]);
+
 westholmeRandomEncounterTable = new Table([
     "Men",
-    "Humanoid"
+    "Humanoid",
+    "Flyer",
+    "Insect",
+    "Unusual",
+    "Animal",
+    "Animal",
+    "Undead"
 ]);
 
 $(document).ready(function() {
     randomEncounterTables["Men"] = menTable;
     randomEncounterTables["Humanoid"] = humanoidTable;
+    randomEncounterTables["Flyer"] = flyerTable;
+    randomEncounterTables["Insect"] = insectTable;
+    randomEncounterTables["Unusual"] = unusualTable;
+    randomEncounterTables["Animal"] = animalTable;
+    randomEncounterTables["Undead"] = undeadTable;
 });
 
 function checkForEncounter() {
-    var output = "No encounter";
     if (rollDice(6) == 1) {
         var rtable = westholmeRandomEncounterTable.getValue();
         var table = randomEncounterTables[rtable];
         var monster = table.getValue();
         if (monster.substr(0, 8) == "Special:") {
-            output = "You encountered " + monster.substr(8);
+            $('#re-result').html("You encountered " + monster.substr(8));
         } else {
             var Monster = Parse.Object.extend("monsters");
             var query = new Parse.Query(Monster);
@@ -65,6 +149,7 @@ function checkForEncounter() {
                 }
             });
         }
+    } else {
+        $("#re-result").html("No encounter");
     }
-    $('#re-result').html(output);
 }
