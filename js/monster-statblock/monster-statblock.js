@@ -36,6 +36,20 @@ function monsterSelected(monster) {
     });
 }
 
+function genDungeonEncounter() {
+    var monster = $("#ms-input").val();
+    if (monster != undefined && monster.trim().length > 0) {
+        buildMonsterEncounter(false, $('#ms-result'), monster);
+    }
+}
+
+function genWildernessEncounter() {
+    var monster = $("#ms-input").val();
+    if (monster != undefined && monster.trim().length > 0) {
+        buildMonsterEncounter(true, $('#ms-result'), monster);
+    }
+}
+
 monstersArray = new Array();
 
 $(document).ready(function() {
@@ -67,3 +81,4 @@ $(document).ready(function() {
         monsterSelected(datum.value.toString());
     });
 })
+

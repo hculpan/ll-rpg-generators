@@ -446,12 +446,11 @@ function numberEncountere(encString) {
     } else {
         num = diceRoller.roll(encString).total;
     }
-    return num;
+    return (num > 0 ? num : 1);
 }
 
 function rollHitPoints(num, hdString) {
     var output = "";
-    console.log('hdString = ' + hdString);
     var hd = hdString.toLowerCase().trim();
     if (hd.indexOf(" hp") > 0) {
         var fields = hd.split("hp");
@@ -459,21 +458,33 @@ function rollHitPoints(num, hdString) {
             output = rollHitPoints(num, fields[0]);
         } else {
             for (var i = 0; i < num; i++) {
-                output += field1.trim() + "<br>";
+                if (i != 0) {
+                    output += ", ";
+                }
+                output += field1.trim();
             }
+            output += " hp";
         }
     } else if (hd.indexOf("+") > 0) {
         var fields = hd.split("+");
         hd = fields[0].trim() + "d8+" + fields[1].trim();
         for (var i = 0; i < num; i++) {
-            output += diceRoller.roll(hd).total.toString() + "<br>";
+            if (i != 0) {
+                output += ", ";
+            }
+            output += diceRoller.roll(hd).total.toString();
         }
+        output += " hp";
     } else if (hd.indexOf("-") > 0) {
         var fields = hd.split("-");
         hd = fields[0].trim() + "d8-" + fields[1].trim();
         for (var i = 0; i < num; i++) {
-            output += diceRoller.roll(hd).total.toString() + "<br>";
+            if (i != 0) {
+                output += ", ";
+            }
+            output += diceRoller.roll(hd).total.toString();
         }
+        output += " hp";
     } else if (hd.indexOf(",") >= 0) {
         var fields = hd.split(",");
         var baseHd = parseInt(fields[0]);
@@ -481,104 +492,92 @@ function rollHitPoints(num, hdString) {
         baseHd += rollDice(diff + 1) - 1;
         hd = baseHd + "d8";
         for (var i = 0; i < num; i++) {
-            output += diceRoller.roll(hd).total.toString() + " (" + baseHd + "HD)<br>";
+            if (i != 0) {
+                output += ", ";
+            }
+            output += diceRoller.roll(hd).total.toString() + " (" + baseHd + "HD)";
         }
+        output += " hp";
     } else if (hd.indexOf("d") >= 0) {
         for (var i = 0; i < num; i++) {
-            output += diceRoller.roll(hd).total.toString() + "<br>";
+            if (i != 0) {
+                output += ", ";
+            }
+            output += diceRoller.roll(hd).total.toString();
         }
+        output += " hp";
     } else {
         hd = hd + "d8";
         for (var i = 0; i < num; i++) {
-            output += diceRoller.roll(hd).total.toString() + "<br>";
+            if (i != 0) {
+                output += ", ";
+            }
+            output += diceRoller.roll(hd).total.toString();
         }
+        output += " hp";
     }
     return output;
 }
 
-function generateEncounter() {
-    if (isWilderness()) {
-        var terrain = $("#re-terrain").val();
-        var monster = wildernessEncounterTables[terrain].getValue();
-        var distance = diceRoller.roll("4d6").total * 10;
-        if (monster.substr(0, 8) == "Special:") {
-            var output = "You encountered " + monster.substr(8) + " (" + distance + " yards away)<br>";
-            output += rollSurprise() + " " + rollReaction() + "<br>";
-            $('#re-result').html(output);
-        } else {
-            var Monster = Parse.Object.extend("monsters");
-            var query = new Parse.Query(Monster);
-            query.equalTo("name", monster);
-            query.find({
-                success: function(results) {
-                    var mObject = results[0];
-                    if (mObject == undefined) {
-                        $('#re-result').html("Rolled " + monster + " but cannot retrieve stats");
-                    } else {
-                        var numEncountered = mObject.get('enc_lair');
-                        console.log(mObject.get('name') + ": " + numEncountered);
-                        if (numEncountered == "0") {
-                            console.log('invalid encounter, try again...');
-                            generateEncounter();
-                        } else {
-                            var num = numberEncountere(numEncountered);
-                            var output = "You have encountered " + num + " " + monster + " (" + distance + " yards away)<br>"
-                            output += rollSurprise() + " " + rollReaction() + "<br><br>";
-                            output += buildMonsterStatBlock(mObject) + "<br><br>";
-                            output += rollHitPoints(num, mObject.get('hd'));
-                            $("#re-result").html(output);
-                        }
-                    }
-                },
-                error: function(error) {
-                    alert("Error: " + error.code + " " + error.message);
-                }
-            });
-        }
+function buildMonsterEncounter(wilderness, outputControl, monsterName) {
+    var distance;
+    var yardsOrFeet = (wilderness ? "yards" : "feet");
+    if (wilderness) {
+        distance = diceRoller.roll("4d6").total * 10;
     } else {
-        var level = $("#re-dungeon-level").val().trim();
-        var table = dungeonEncounterTables[level];
-        var distance = diceRoller.roll("2d6").total * 10;
-        if (table == undefined) {
-            $('#re-result').html("Invalid dungeon level '" + level + "'");
-        } else {
-            var monster = table.getValue();
-            if (monster.substr(0, 8) == "Special:") {
-                var output = "You encountered " + monster.substr(8) + " (" + distance + " yards away)<br>";
-                output += rollSurprise() + " " + rollReaction() + "<br>";
-                $('#re-result').html(output);
-            } else {
-                var Monster = Parse.Object.extend("monsters");
-                var query = new Parse.Query(Monster);
-                query.equalTo("name", monster);
-                query.find({
-                    success: function(results) {
-                        var mObject = results[0];
-                        if (mObject == undefined) {
-                            $('#re-result').html("Rolled " + monster + " but cannot retrieve stats");
-                        } else {
-                            var numEncountered = mObject.get('enc_dungeon');
-                            console.log(mObject.get('name') + ": " + numEncountered);
-                            if (numEncountered == "0") {
-                                console.log('invalid encounter, try again...');
-                                generateEncounter();
-                            } else {
-                                var num = numberEncountere(numEncountered);
-                                var output = "You have encountered " + num + " " + monster + " (" + distance + " feet away)<br>"
-                                output += rollSurprise() + " " + rollReaction() + "<br><br>";
-                                output += buildMonsterStatBlock(mObject) + "<br><br>";
-                                output += rollHitPoints(num, mObject.get('hd'));
-                                $("#re-result").html(output);
-                            }
-                        }
-                    },
-                    error: function(error) {
-                        alert("Error: " + error.code + " " + error.message);
-                    }
-                });
-            }
-        }
+        distance = diceRoller.roll("2d6").total * 10;
     }
+
+    if (monsterName.substr(0, 8) == "Special:") {
+        var output = "You encountered " + monsterName.substr(8) + " (" + distance + " " + yardsOrFeet + " away)<br>";
+        output += rollSurprise() + " " + rollReaction() + "<br>";
+        outputControl.html(output);
+    } else {
+        var Monster = Parse.Object.extend("monsters");
+        var query = new Parse.Query(Monster);
+        query.equalTo("name", monsterName);
+        query.find({
+            success: function(results) {
+                var mObject = results[0];
+                if (mObject == undefined) {
+                    outputControl.html("Rolled " + monsterName + " but cannot retrieve stats");
+                } else {
+                    var numEncountered = mObject.get((wilderness ? 'enc_lair' : 'enc_dungeon'));
+                    console.log(mObject.get('name') + ": " + numEncountered);
+                    if (numEncountered == "0") {
+                        console.log('invalid encounter, try again...');
+                        generateEncounter();
+                    } else {
+                        var num = numberEncountere(numEncountered);
+                        var output = "You have encountered " + num + " " + monsterName + " (" + distance + " " + yardsOrFeet + " away)<br>";
+                        output += rollSurprise() + " " + rollReaction() + "<br><br>";
+                        output += buildMonsterStatBlock(mObject) + "<br><br>";
+                        output += rollHitPoints(num, mObject.get('hd'));
+                        outputControl.html(output);
+                    }
+                }
+            },
+            error: function(error) {
+                alert("Error: " + error.code + " " + error.message);
+            }
+        });
+    }
+
+}
+
+function buildEncounter(wilderness, encountersTable, outputControl, terrainOrLevel) {
+    var terrain = terrainOrLevel;
+    var monster = encountersTable[terrain].getValue();
+    buildMonsterEncounter(wilderness, outputControl, monster);
+}
+
+function generateEncounter(outputControl) {
+    buildEncounter(
+        isWilderness(),
+        (isWilderness() ? wildernessEncounterTables : dungeonEncounterTables),
+        $("#re-result"),
+        (isWilderness() ? $("#re-terrain").val() : $("#re-dungeon-level").val().trim())
+    );
 }
 
 function checkForEncounter() {
