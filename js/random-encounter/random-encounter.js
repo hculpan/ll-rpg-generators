@@ -355,7 +355,7 @@ $(document).ready(function() {
         "Scorpion, Giant",
         "Spectre (Undead)",
         "Troll",
-        "Worm, Gray"
+        "Gray Worm"
     ])
 
     dungeonEncounterTables["7"] = dungeonEncounterTables["6"];
@@ -404,12 +404,107 @@ function isForcedEncounter() {
     return $('#re-force').prop('checked');
 }
 
+function rollSurprise() {
+    var die = diceRoller.roll("d6");
+    if (die == 1 || die == 2) {
+        return "SURPRISED (" + die + ")!";
+    } else {
+        return "They are not surprised (" + die + ").";
+    }
+}
+
+function rollReaction() {
+    var result = "Their attitude is ";
+    var die = diceRoller.roll("2d6").total;
+    if (die <= 2) {
+        result += "friendly and unhelpful";
+    } else if (die <= 5) {
+        result += "indifferent and uninterested";
+    } else if (die <= 8) {
+        result += "neutral and uncertain";
+    } else if (die <= 11) {
+        result += "unfriendly and they may attack";
+    } else {
+        result += "hostile and they attack";
+    }
+    return result + " (" + die + ").";
+}
+
+function numberEncountere(encString) {
+    var num;
+    var text = encString.toLowerCase();
+    if (encString == "1" || encString == "Unique") {
+        num = 1;
+    } else if (encString.indexOf("x") > 0) {
+        var fields = encString.split("x");
+        num = diceRoller.roll(fields[0]).total;
+        num *= parseInt(fields[1]);
+    } else if (encString.indexOf("*") > 0) {
+        var fields = encString.split("*");
+        num = diceRoller.roll(fields[0]).total;
+        num *= parseInt(fields[1]);
+    } else {
+        num = diceRoller.roll(encString).total;
+    }
+    return num;
+}
+
+function rollHitPoints(num, hdString) {
+    var output = "";
+    console.log('hdString = ' + hdString);
+    var hd = hdString.toLowerCase().trim();
+    if (hd.indexOf(" hp") > 0) {
+        var fields = hd.split("hp");
+        if (fields[0].indexOf("d")) {
+            output = rollHitPoints(num, fields[0]);
+        } else {
+            for (var i = 0; i < num; i++) {
+                output += field1.trim() + "<br>";
+            }
+        }
+    } else if (hd.indexOf("+") > 0) {
+        var fields = hd.split("+");
+        hd = fields[0].trim() + "d8+" + fields[1].trim();
+        for (var i = 0; i < num; i++) {
+            output += diceRoller.roll(hd).total.toString() + "<br>";
+        }
+    } else if (hd.indexOf("-") > 0) {
+        var fields = hd.split("-");
+        hd = fields[0].trim() + "d8-" + fields[1].trim();
+        for (var i = 0; i < num; i++) {
+            output += diceRoller.roll(hd).total.toString() + "<br>";
+        }
+    } else if (hd.indexOf(",") >= 0) {
+        var fields = hd.split(",");
+        var baseHd = parseInt(fields[0]);
+        var diff = parseInt(fields[1]) - baseHd;
+        baseHd += rollDice(diff + 1) - 1;
+        hd = baseHd + "d8";
+        for (var i = 0; i < num; i++) {
+            output += diceRoller.roll(hd).total.toString() + " (" + baseHd + "HD)<br>";
+        }
+    } else if (hd.indexOf("d") >= 0) {
+        for (var i = 0; i < num; i++) {
+            output += diceRoller.roll(hd).total.toString() + "<br>";
+        }
+    } else {
+        hd = hd + "d8";
+        for (var i = 0; i < num; i++) {
+            output += diceRoller.roll(hd).total.toString() + "<br>";
+        }
+    }
+    return output;
+}
+
 function generateEncounter() {
     if (isWilderness()) {
         var terrain = $("#re-terrain").val();
         var monster = wildernessEncounterTables[terrain].getValue();
+        var distance = diceRoller.roll("4d6").total * 10;
         if (monster.substr(0, 8) == "Special:") {
-            $('#re-result').html("You encountered " + monster.substr(8));
+            var output = "You encountered " + monster.substr(8) + " (" + distance + " yards away)<br>";
+            output += rollSurprise() + " " + rollReaction() + "<br>";
+            $('#re-result').html(output);
         } else {
             var Monster = Parse.Object.extend("monsters");
             var query = new Parse.Query(Monster);
@@ -426,7 +521,12 @@ function generateEncounter() {
                             console.log('invalid encounter, try again...');
                             generateEncounter();
                         } else {
-                            $("#re-result").html(buildMonsterStatBlock(mObject));
+                            var num = numberEncountere(numEncountered);
+                            var output = "You have encountered " + num + " " + monster + " (" + distance + " yards away)<br>"
+                            output += rollSurprise() + " " + rollReaction() + "<br><br>";
+                            output += buildMonsterStatBlock(mObject) + "<br><br>";
+                            output += rollHitPoints(num, mObject.get('hd'));
+                            $("#re-result").html(output);
                         }
                     }
                 },
@@ -438,12 +538,15 @@ function generateEncounter() {
     } else {
         var level = $("#re-dungeon-level").val().trim();
         var table = dungeonEncounterTables[level];
+        var distance = diceRoller.roll("2d6").total * 10;
         if (table == undefined) {
             $('#re-result').html("Invalid dungeon level '" + level + "'");
         } else {
             var monster = table.getValue();
             if (monster.substr(0, 8) == "Special:") {
-                $('#re-result').html("You encountered " + monster.substr(8));
+                var output = "You encountered " + monster.substr(8) + " (" + distance + " yards away)<br>";
+                output += rollSurprise() + " " + rollReaction() + "<br>";
+                $('#re-result').html(output);
             } else {
                 var Monster = Parse.Object.extend("monsters");
                 var query = new Parse.Query(Monster);
@@ -460,7 +563,12 @@ function generateEncounter() {
                                 console.log('invalid encounter, try again...');
                                 generateEncounter();
                             } else {
-                                $("#re-result").html(buildMonsterStatBlock(mObject));
+                                var num = numberEncountere(numEncountered);
+                                var output = "You have encountered " + num + " " + monster + " (" + distance + " feet away)<br>"
+                                output += rollSurprise() + " " + rollReaction() + "<br><br>";
+                                output += buildMonsterStatBlock(mObject) + "<br><br>";
+                                output += rollHitPoints(num, mObject.get('hd'));
+                                $("#re-result").html(output);
                             }
                         }
                     },
