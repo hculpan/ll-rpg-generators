@@ -14,17 +14,17 @@ function stockRoom() {
     if (roomContents == 1 || roomContents == 2) {
         output = "<p>Empty</p>";
         if (treasureRoll == 1) {
-            output += "<p>There is treasure here</p>"
+            output += "<p>Treasure: " + generateUnprotectedTreasure(getDungeonLevel()) + "</p>"
         }
     } else if (roomContents == 3) {
         output = "<p>Trap: " + generateTrap() + "</p>";
         if (treasureRoll <= 2) {
-            output += "<p>There is treasure here</p>"
+            output += "<p>Treasure: " + generateUnprotectedTreasure(getDungeonLevel()) + "</p>"
         }
     } else if (roomContents == 4 || roomContents == 5) {
         output = "<p>Monster</p>";
         if (treasureRoll <= 3) {
-            output += "<p>There is treasure here</p>"
+            output += "<p>Treasure: " + generateUnprotectedTreasure(getDungeonLevel()) + "</p>"
         }
     } else {
         output = "<p>Special</p>";
