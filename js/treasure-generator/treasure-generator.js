@@ -124,7 +124,7 @@ function displayTreasure() {
     }
 
     if (output != null) {
-        output += " [total value " + totalValue + " gp]";
+        output += " [hoard value " + totalValue + " gp]";
     } else {
         output = "no treasure";
     }
