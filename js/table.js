@@ -2,8 +2,8 @@
  * Created by usucuha on 1/2/14.
  */
 
-var Table = (function() {
     // "private" variables
+var Table = (function() {
     var _sides;
     var _values;
     var _diceNums;

@@ -22,13 +22,48 @@ function stockRoom() {
             output += "<p>Treasure: " + generateUnprotectedTreasure(getDungeonLevel()) + "</p>"
         }
     } else if (roomContents == 4 || roomContents == 5) {
-        output = "<p>Monster</p>";
-        if (treasureRoll <= 3) {
-            output += "<p>Treasure: " + generateUnprotectedTreasure(getDungeonLevel()) + "</p>"
-        }
+        buildMonsterDungeonEncounter(treasureRoll);
     } else {
         output = "<p>Special</p>";
     }
 
     $("#sd-main-result").html(output);
+}
+
+function buildMonsterDungeonEncounter(treasureRoll) {
+    var monster = getDungeonEncounter(getDungeonLevel());
+    var num = diceRoller.roll(monster['numEncountered']).total;
+
+    var Monster = Parse.Object.extend("monsters");
+    var query = new Parse.Query(Monster);
+    console.log('monster: ' + monster['name']);
+    query.equalTo("name", monster['name']);
+    query.find({
+        success: function(results) {
+            if (results.length == 0) {
+                $("#sd-main-result").html("unable to lookup '" + monster['name'] + "'");
+            } else {
+                var monsterObj = results[0];
+                console.log(monsterObj);
+                var output = "<p>Monster: " + num + " " + monsterObj.get('name') + "</p>";
+                output += "<p>" + buildMonsterStatBlock(monsterObj, true) + "</p>";
+                if (treasureRoll <= 3) {
+                    if (monsterObj.get('hoard_class') != undefined && monsterObj.get('hoard_class') != "None") {
+                        console.log('generating treasure for hoard class ' + monsterObj.get('hoard_class'))
+                        output += "<p>Treasure: " + generateTreasureText(monsterObj.get('hoard_class')) + "</p>";
+                    } else {
+                        console.log('generating unguarded treasure');
+                        output += "<p>Treasure: " + generateUnprotectedTreasure(getDungeonLevel()) + "</p>";
+                    }
+                }
+
+                output += rollHitPoints(num, monsterObj.get('hd'))
+
+                $("#sd-main-result").html(output);
+            }
+        },
+        error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+        }
+    });
 }

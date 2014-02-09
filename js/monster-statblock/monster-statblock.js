@@ -4,11 +4,17 @@
 
 var monsterList = new Object();
 
-function buildMonsterStatBlock(monsterObject) {
+function buildMonsterStatBlock(monsterObject, suppressName) {
+    if (arguments.length == 1) {
+        suppressName = false;
+    }
+
     var output = "";
 
-    output += monsterObject.get('name');
-    output += " (" + monsterObject.get('enc_dungeon') + "/" + monsterObject.get('enc_lair') + ")<br>";
+    if (!suppressName) {
+        output += monsterObject.get('name');
+        output += " (" + monsterObject.get('enc_dungeon') + "/" + monsterObject.get('enc_lair') + ")<br>";
+    }
     output += "AC " + monsterObject.get('ac_asc') + " [" + monsterObject.get('ac_desc') + "]";
     output += "; " + monsterObject.get('move');
     output += "; HD " + monsterObject.get('hd');

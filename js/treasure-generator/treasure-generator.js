@@ -106,6 +106,32 @@ function generateTreasure(hoardClass) {
     return resultSet;
 }
 
+function generateTreasureText(hoardClass) {
+    var results = generateTreasure(getHoardClass());
+    var output = null;
+
+    var totalValue = 0;
+    for (var i = 0; i < results.length; i++) {
+        if (results[i] != null) {
+            if (output != null) {
+                output += ", " + results[i][0];
+                totalValue += results[i][1];
+            } else {
+                output = results[i][0];
+                totalValue += results[i][1];
+            }
+        }
+    }
+
+    if (output != null) {
+        output += " [hoard value " + totalValue + " gp]";
+    } else {
+        output = "no treasure";
+    }
+
+    return output;
+}
+
 function displayTreasure() {
     var results = generateTreasure(getHoardClass());
     var output = null;
