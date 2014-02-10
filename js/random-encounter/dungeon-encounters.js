@@ -70,7 +70,7 @@ var level3DungeonEncounters = new WeightedTable([
     { range: "74-75", name: "Spider, Giant Crab", numEncountered: "1d4"},
     { range: "76-77", name: "Spider, Giant Tarantula", numEncountered: "1d2"},
     { range: "78", name: "Statue, Animated Crystal", numEncountered: "1d4"},
-    { range: "79-80", name: "Throgrhin", numEncountered: "1d6"},
+    { range: "79-80", name: "Throghrin", numEncountered: "1d6"},
     { range: "81-82", name: "Tick, Giant", numEncountered: "2d4"},
     { range: "83-84", name: "Toad, Giant Poisonous", numEncountered: "1d4"},
     { range: "85-87", name: "Troglodyte", numEncountered: "1d8"},
