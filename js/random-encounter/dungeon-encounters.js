@@ -84,7 +84,7 @@ var level2DungeonEncounters = new WeightedTable([
     { range: "39", name: "Lizard, Giant Gecko", numEncountered: "1d3"},
     { range: "40-41", name: "Lizardfolk", numEncountered: "1d6"},
     { range: "42", name: "Locust, Subterranean", numEncountered: "3d4"},
-    { range: "43-44", name: "Man, Berserker", numEncountered: "2d4"}
+    { range: "43-44", name: "Man, Berserker", numEncountered: "2d4"},
     { range: "45-46", name: "Morlock", numEncountered: "1d12"},
     { range: "47-48", name: "Neanderthal", numEncountered: "1d6"},
     { range: "49-51", name: "NPC Party", numEncountered: "1d6+2"},
