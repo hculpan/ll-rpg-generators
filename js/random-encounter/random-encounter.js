@@ -20,7 +20,7 @@ $(document).ready(function() {
         "Lizard, Giant Gecko",
         "Lizard, Giant Tuatara",
         "Men, Nomad",
-        "Mummy (Undead)",
+        "Mummy",
         "Special:NPC Party",
         "Ogre",
         "Scorpion, Giant",
@@ -38,7 +38,7 @@ $(document).ready(function() {
         "Dryad",
         "Dragon, Green",
         "Elf",
-        "Ghoul (Undead)",
+        "Ghoul",
         "Hobgoblin",
         "Lycanthrope, Werewolf",
         "Men, Brigand",
@@ -47,7 +47,7 @@ $(document).ready(function() {
         "Spider, Giant Crab",
         "Troll",
         "Unicorn",
-        "Wight (Undead)",
+        "Wight",
         "Wolf",
         "Wolf, Dire"
     ]);
@@ -199,7 +199,7 @@ $(document).ready(function() {
         "Basilisk",
         "Boar",
         "Dragon, Black",
-        "Ghoul (Undead)",
+        "Ghoul",
         "Gnoll",
         "Goblin",
         "Leech, Giant",
@@ -222,7 +222,7 @@ $(document).ready(function() {
         "Boar",
         "Dwarf",
         "Elf",
-        "Ghoul (Undead)",
+        "Ghoul",
         "Giant, Hill",
         "Gnoll",
         "Goblin",
@@ -237,8 +237,8 @@ $(document).ready(function() {
         "Orc",
         "Rat, Giant",
         "Spectre",
-        "Vampire (Undead)",
-        "Zombie (Undead)"
+        "Vampire",
+        "Zombie"
     ]);
 
     dungeonEncounterTables["1"] = new Table([
@@ -256,12 +256,12 @@ $(document).ready(function() {
         "Orc",
         "Rat, Giant",
         "Snake, Spitting Cobra",
-        "Skeleton (Undead)",
+        "Skeleton",
         "Spider, Giant Crab",
         "Stirge",
         "Toad, Giant",
         "Wolf",
-        "Zombie (Undead)"
+        "Zombie"
      ])
 
     dungeonEncounterTables["2"] = new Table([
@@ -270,7 +270,7 @@ $(document).ready(function() {
         "Beetle, Giant Spitting",
         "Cat, Mountain Lion",
         "Elf",
-        "Ghoul (Undead)",
+        "Ghoul",
         "Gnoll",
         "Gray Ooze",
         "Hobgoblin",
@@ -284,7 +284,7 @@ $(document).ready(function() {
         "Toad, Giant",
         "Troglodyte",
         "Yellow Mold",
-        "Zombie (Undead)"
+        "Zombie"
     ])
 
     dungeonEncounterTables["3"] = new Table([
@@ -307,7 +307,7 @@ $(document).ready(function() {
         "Shadow",
         "Spider, Giant Tarantula",
         "Throghrin",
-        "Wight (Undead)"
+        "Wight"
     ])
 
     dungeonEncounterTables["4"] = new Table([
@@ -321,16 +321,16 @@ $(document).ready(function() {
         "Lycanthrope, Wereboar",
         "Lycanthrope, Werewolf",
         "Minotaur",
-        "Mummy (Undead)",
+        "Mummy",
         "Special:NPC Group",
         "Ochre Jelly",
         "Owl Bear",
         "Rhagodessa",
         "Rust Monster",
-        "Spectre (Undead)",
+        "Spectre",
         "Troll",
         "Worm, Gray",
-        "Wraith (Undead)"
+        "Wraith"
     ])
 
     dungeonEncounterTables["5"] = dungeonEncounterTables["4"];
@@ -353,7 +353,7 @@ $(document).ready(function() {
         "Rust Monster",
         "Salamander, Flame",
         "Scorpion, Giant",
-        "Spectre (Undead)",
+        "Spectre",
         "Troll",
         "Gray Worm"
     ])
@@ -380,7 +380,7 @@ $(document).ready(function() {
         "Purple Worm",
         "Salamander, Flame",
         "Salamander, Frost",
-        "Vampire (Undead)"
+        "Vampire"
     ])
 
     dungeonEncounterTables["9"] = dungeonEncounterTables["8"];
