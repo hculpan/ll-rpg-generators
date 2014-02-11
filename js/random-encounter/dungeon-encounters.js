@@ -209,7 +209,7 @@ var level4DungeonEncounters = new WeightedTable([
 ])
 
 var demonDevilDragon4DungeonEncounters = new WeightedTable([
-    { range: "01-20", name: "Dragon, Black", numEncountered: "1"},
+    { range: "01-20", name: "Dragon, Black (Young)", numEncountered: "1"},
     { range: "21-30", name: "Dragon, Brass", numEncountered: "1"},
     { range: "31-50", name: "Dragon, White", numEncountered: "1"},
     { range: "51-70", name: "Hydra, 6-Headed", numEncountered: "1"},
@@ -218,10 +218,47 @@ var demonDevilDragon4DungeonEncounters = new WeightedTable([
     { range: "91-100", name: "Demon, Succubus/Incubus (Standard Order Demon)", numEncountered: "1"}
 ])
 
+var demonDevilDragon5DungeonEncounters = new WeightedTable([
+    { range: "01-10", name: "Dragon, Black (Young)", numEncountered: "1d2"},
+    { range: "11-20", name: "Dragon, Brass", numEncountered: "1d2"},
+    { range: "21-30", name: "Dragon, Copper", numEncountered: "1"},
+    { range: "31-40", name: "Dragon, Green", numEncountered: "1"},
+    { range: "41-50", name: "Dragon, White", numEncountered: "1"},
+    { range: "51-60", name: "Hydra, 7-Headed", numEncountered: "1"},
+    { range: "61-70", name: "Demon, Quasit (Lower Order Demon)", numEncountered: "1"},
+    { range: "71-80", name: "Devil, Imp (Lesser devil)", numEncountered: "1"},
+    { range: "81-90", name: "Demon, Succubus/Incubus (Standard Order Demon)", numEncountered: "1"},
+    { range: "91-100", name: "Devil, Erinyes (Lesser devil)", numEncountered: "1"}
+])
+
+var demonDevilDragon6DungeonEncounters = new WeightedTable([
+    { range: "01-10", name: "Dragon, Black (Mature)", numEncountered: "1"},
+    { range: "11-20", name: "Dragon, Blue", numEncountered: "1"},
+    { range: "21-30", name: "Dragon, Brass", numEncountered: "1d2"},
+    { range: "31-40", name: "Dragon, Bronze", numEncountered: "1"},
+    { range: "41-50", name: "Dragon, Copper", numEncountered: "1"},
+    { range: "51-60", name: "Dragon, Green", numEncountered: "1d2"},
+    { range: "61-70", name: "Dragon, White", numEncountered: "1d2"},
+    { range: "51-60", name: "Hydra, 8-Headed", numEncountered: "1"},
+    { range: "61-70", name: "Demon, Quasit (Lower Order Demon)", numEncountered: "1"},
+    { range: "71-80", name: "Devil, Imp (Lesser devil)", numEncountered: "1"},
+    { range: "81-90", name: "Demon, Succubus/Incubus (Standard Order Demon)", numEncountered: "1"},
+    { range: "91-100", name: "Devil, Erinyes (Lesser devil)", numEncountered: "1"},
+    { range: "91-100", name: "Devil, Bone (Lesser devil)", numEncountered: "1"}
+])
+
+var level5DungeonEncounters = new WeightedTable([
+    { range: "01-05", name: "Table:level3"},
+    { range: "06-07", name: "Ant, Giant", numEncountered: "1d6"},
+])
+
 var dungeonEncounters = {
     level1: level1DungeonEncounters,
     level2: level2DungeonEncounters,
     level3: level3DungeonEncounters,
     level4: level4DungeonEncounters,
-    demon_devil_dragon4: demonDevilDragon4DungeonEncounters
+    demon_devil_dragon4: demonDevilDragon4DungeonEncounters,
+    level5: level5DungeonEncounters,
+    demon_devil_dragon5: demonDevilDragon5DungeonEncounters,
+    demon_devil_dragon6: demonDevilDragon6DungeonEncounters
 }
