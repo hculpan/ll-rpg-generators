@@ -82,26 +82,31 @@ var DiceRoller = function() {
      * Returns a ResultSet on success and null on failure
      */
     this.roll = function(formula) {
-        var pieces = parse(formula);
-        if (pieces === null) {
-            return null;
-        }
-
         var results = new ResultSet();
+        if (formula.match(/^\d+$/i)) {
+            results.rolls[0] = parseInt(formula)
+            results.modifier = 0
+            results.total = results.rolls[0]
+        } else {
+            var pieces = parse(formula);
+            if (pieces === null) {
+                return null;
+            }
 
-        // rolls
-        for (var i = 0; i < pieces.rolls; i++) {
-            results.rolls[i] = (1 + Math.floor(Math.random() * pieces.sides));
+            // rolls
+            for (var i = 0; i < pieces.rolls; i++) {
+                results.rolls[i] = (1 + Math.floor(Math.random() * pieces.sides));
+            }
+
+            // modifier
+            results.modifier = pieces.modifier;
+
+            // total
+            for (var i = 0; i < results.rolls.length; i++) {
+                results.total += results.rolls[i];
+            }
+            results.total += pieces.modifier;
         }
-
-        // modifier
-        results.modifier = pieces.modifier;
-
-        // total
-        for (var i = 0; i < results.rolls.length; i++) {
-            results.total += results.rolls[i];
-        }
-        results.total += pieces.modifier;
 
         return results;
     };

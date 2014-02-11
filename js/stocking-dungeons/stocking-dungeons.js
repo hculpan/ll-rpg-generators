@@ -41,7 +41,7 @@ function buildMonsterDungeonEncounter(treasureRoll) {
     query.find({
         success: function(results) {
             if (results.length == 0) {
-                var output = "<p>Monster: " + num + " " + monsterObj.get('name') + "</p>";
+                var output = "<p>Monster: " + num + " " + monster['name'] + "</p>";
                 $("#sd-main-result").html(output);
             } else {
                 var monsterObj = results[0];
@@ -61,7 +61,11 @@ function buildMonsterDungeonEncounter(treasureRoll) {
 
                 var mxp = monsterObj.get('xp') * num
                 var txp = Math.floor(treasure == undefined ? 0 : treasure['gpValue'])
-                output += "<p>" + "Encounter XP: " + (mxp + txp) + " [monster xp=" + mxp + ", treasure xp=" + txp +  "]</p>"
+                output += "<p>" + "Encounter XP: " + (mxp + txp)
+                if (treasure != undefined) {
+                    output += " [monster xp=" + mxp + ", treasure xp=" + txp +  "]"
+                }
+                output += "</p>"
 
                 $("#sd-main-result").html(output);
             }
