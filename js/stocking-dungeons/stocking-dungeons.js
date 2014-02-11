@@ -14,12 +14,12 @@ function stockRoom() {
     if (roomContents == 1 || roomContents == 2) {
         output = "<p>Empty</p>";
         if (treasureRoll == 1) {
-            output += "<p>Treasure: " + generateUnprotectedTreasure(getDungeonLevel()) + "</p>"
+            output += "<p>Treasure: " + generateUnprotectedTreasure(getDungeonLevel())['output'] + "</p>"
         }
     } else if (roomContents == 3) {
         output = "<p>Trap: " + generateTrap() + "</p>";
         if (treasureRoll <= 2) {
-            output += "<p>Treasure: " + generateUnprotectedTreasure(getDungeonLevel()) + "</p>"
+            output += "<p>Treasure: " + generateUnprotectedTreasure(getDungeonLevel())['output'] + "</p>"
         }
     } else if (roomContents == 4 || roomContents == 5) {
         buildMonsterDungeonEncounter(treasureRoll);
@@ -41,23 +41,27 @@ function buildMonsterDungeonEncounter(treasureRoll) {
     query.find({
         success: function(results) {
             if (results.length == 0) {
-                $("#sd-main-result").html("unable to lookup '" + monster['name'] + "'");
+                var output = "<p>Monster: " + num + " " + monsterObj.get('name') + "</p>";
+                $("#sd-main-result").html(output);
             } else {
                 var monsterObj = results[0];
-                console.log(monsterObj);
                 var output = "<p>Monster: " + num + " " + monsterObj.get('name') + "</p>";
                 output += "<p>" + buildMonsterStatBlock(monsterObj, true) + "</p>";
+                var treasure = undefined
                 if (treasureRoll <= 3) {
                     if (monsterObj.get('hoard_class') != undefined && monsterObj.get('hoard_class') != "None") {
-                        console.log('generating treasure for hoard class ' + monsterObj.get('hoard_class'))
-                        output += "<p>Treasure: " + generateTreasureText(monsterObj.get('hoard_class')) + "</p>";
+                        treasure = generateTreasureText(monsterObj.get('hoard_class'))
                     } else {
-                        console.log('generating unguarded treasure');
-                        output += "<p>Treasure: " + generateUnprotectedTreasure(getDungeonLevel()) + "</p>";
+                        treasure = generateUnprotectedTreasure(getDungeonLevel())
                     }
+                    output += "<p>Treasure: " + treasure['output'] + "</p>";
                 }
 
-                output += rollHitPoints(num, monsterObj.get('hd'))
+                output += "<p>" + rollHitPoints(num, monsterObj.get('hd')) + "</p>";
+
+                var mxp = monsterObj.get('xp') * num
+                var txp = Math.floor(treasure == undefined ? 0 : treasure['gpValue'])
+                output += "<p>" + "Encounter XP: " + (mxp + txp) + " [monster xp=" + mxp + ", treasure xp=" + txp +  "]</p>"
 
                 $("#sd-main-result").html(output);
             }

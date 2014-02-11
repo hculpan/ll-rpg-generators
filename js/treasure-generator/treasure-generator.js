@@ -129,7 +129,8 @@ function generateTreasureText(hoardClass) {
         output = "no treasure";
     }
 
-    return output;
+    return { gpValue: totalValue,
+             output: output };
 }
 
 function displayTreasure() {

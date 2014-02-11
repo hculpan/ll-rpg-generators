@@ -47,7 +47,7 @@ var level1DungeonEncounters = new WeightedTable([
     { range: "66-69", name: "Rat", numEncountered: "5d10"},
     { range: "70-71", name: "Rot Grub", numEncountered: "5d4"},
     { range: "72", name: "Shrieker", numEncountered: "1d8"},
-    { range: "73-76", name: "Skeleton", numEncountered: "2d4"},
+    { range: "73-76", name: "Skeleton (Undead)", numEncountered: "2d4"},
     { range: "77-79", name: "Snake, Spitting Cobra", numEncountered: "1d6"},
     { range: "80-82", name: "Spider, Giant Crab", numEncountered: "1d2"},
     { range: "83-85", name: "Stirge", numEncountered: "1d10"},
@@ -55,13 +55,13 @@ var level1DungeonEncounters = new WeightedTable([
     { range: "88-89", name: "Troglodyte", numEncountered: "1d2"},
     { range: "90-91", name: "Wolf", numEncountered: "1d3"},
     { range: "92", name: "Yellow Mold", numEncountered: "1d4"},
-    { range: "93-95", name: "Zombie", numEncountered: "1d4"},
+    { range: "93-95", name: "Zombie (Undead)", numEncountered: "1d4"},
     { range: "96-100", name: "Table:level2"}
 ])
 
 var level2DungeonEncounters = new WeightedTable([
     { range: "01-05", name: "Table:level1"},
-    { range: "06-07", name: "Bat, Giant",               numEncountered: "1d10"}
+    { range: "06-07", name: "Bat, Giant",               numEncountered: "1d10"},
     { range: "8", name: "Bee, Giant Killer", numEncountered: "1d10"},
     { range: "9-10", name: "Beetle, Giant Fire", numEncountered: "1d8"},
     { range: "11-12", name: "Beetle, Giant Spitting", numEncountered: "1d6"},
@@ -79,6 +79,34 @@ var level2DungeonEncounters = new WeightedTable([
     { range: "31", name: "Golem, Wood", numEncountered: "1"},
     { range: "32", name: "Green Slime", numEncountered: "1"},
     { range: "33-35", name: "Hobgoblin", numEncountered: "1d6"},
+    { range: "36-37", name: "Kobold", numEncountered: "5d4"},
+    { range: "38", name: "Lizard, Giant Draco", numEncountered: "1"},
+    { range: "39", name: "Lizard, Giant Gecko", numEncountered: "1d3"},
+    { range: "40-41", name: "Lizardfolk", numEncountered: "1d6"},
+    { range: "42", name: "Locust, Subterranean", numEncountered: "3d4"},
+    { range: "43-44", name: "Man, Berserker", numEncountered: "2d4"}
+    { range: "45-46", name: "Morlock", numEncountered: "1d12"},
+    { range: "47-48", name: "Neanderthal", numEncountered: "1d6"},
+    { range: "49-51", name: "NPC Party", numEncountered: "1d6+2"},
+    { range: "52-54", name: "Ogre", numEncountered: "1"},
+    { range: "55-59", name: "Orc", numEncountered: "2d6"},
+    { range: "60", name: "Piercer", numEncountered: "3d6"},
+    { range: "61-64", name: "Rat, Giant", numEncountered: "3d6"},
+    { range: "65-67", name: "Rat", numEncountered: "5d10"},
+    { range: "68", name: "Rot Grub", numEncountered: "5d4"},
+    { range: "69", name: "Shrieker", numEncountered: "1d8"},
+    { range: "70-73", name: "Skeleton (Undead)", numEncountered: "3d4"},
+    { range: "74-75", name: "Snake, Pit Viper", numEncountered: "1d6"},
+    { range: "76-77", name: "Snake, Spitting Cobra", numEncountered: "1d6"},
+    { range: "78-80", name: "Spider, Giant Crab", numEncountered: "1d4"},
+    { range: "81-82", name: "Stirge", numEncountered: "2d6"},
+    { range: "83-84", name: "Throghrin", numEncountered: "1d3"},
+    { range: "85-86", name: "Toad, Giant", numEncountered: "1d4"},
+    { range: "87-88", name: "Troglodyte", numEncountered: "1d3"},
+    { range: "89-90", name: "Wolf", numEncountered: "2d4"},
+    { range: "91", name: "Yellow Mold", numEncountered: "1d4"},
+    { range: "92-95", name: "Zombie (Undead)", numEncountered: "2d4"},
+    { range: "96-100", name: "Table:level3"}
 ])
 
 var level3DungeonEncounters = new WeightedTable([
@@ -126,7 +154,7 @@ var level3DungeonEncounters = new WeightedTable([
     { range: "88-89", name: "Wight", numEncountered: "1d4"},
     { range: "90-91", name: "Wolf, Dire", numEncountered: "1d4"},
     { range: "92", name: "Yellow Mold", numEncountered: "1d4"},
-    { range: "93-95", name: "Zombie", numEncountered: "2d6"},
+    { range: "93-95", name: "Zombie (Undead)", numEncountered: "2d6"},
     { range: "96-100", name: "Table:level4"}
 ])
 

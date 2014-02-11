@@ -231,5 +231,6 @@ function generateUnprotectedTreasure(dungeonLevel) {
             }
     }
 
-    return output + " [total gold value = " + goldValue.toString() + "]";
+    return { gpValue: goldValue,
+             output: output + " [total gold value = " + goldValue.toString() + "]"};
 }
