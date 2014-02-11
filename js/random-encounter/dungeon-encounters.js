@@ -171,13 +171,13 @@ var level4DungeonEncounters = new WeightedTable([
 ])
 
 var demonDevilDragon4DungeonEncounters = new WeightedTable([
-    { range: "01-20", name: "Black Dragon", numEncountered: "1"},
-    { range: "21-30", name: "Brass Dragon", numEncountered: "1"},
-    { range: "31-50", name: "White Dragon", numEncountered: "1"},
+    { range: "01-20", name: "Dragon, Black", numEncountered: "1"},
+    { range: "21-30", name: "Dragon, Brass", numEncountered: "1"},
+    { range: "31-50", name: "Dragon, White", numEncountered: "1"},
     { range: "51-70", name: "Hydra", numEncountered: "1"},
-    { range: "71-80", name: "Quasit", numEncountered: "1"},
-    { range: "81-90", name: "Imp", numEncountered: "1"},
-    { range: "91-100", name: "Succubus", numEncountered: "1"}
+    { range: "71-80", name: "Demon, Quasit (Lower Order Demon)", numEncountered: "1"},
+    { range: "81-90", name: "Devil, Imp (Lesser devil)", numEncountered: "1"},
+    { range: "91-100", name: "Demon, Succubus/Incubus (Standard Order Demon)", numEncountered: "1"}
 ])
 
 var dungeonEncounters = {
