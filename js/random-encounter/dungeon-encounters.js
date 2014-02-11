@@ -25,7 +25,7 @@ var level1DungeonEncounters = new WeightedTable([
     { range: "13",    name: "Elf",                      numEncountered: "1d4"},
     { range: "14",    name: "Elf, Deep",                numEncountered: "1d8"},
     { range: "15-17", name: "Fly, Giant Carnivorous",   numEncountered: "1d6"},
-    { range: "18-19", name: "Ghoul (Undead)", numEncountered: "1d2"},
+    { range: "18-19", name: "Ghoul", numEncountered: "1d2"},
     { range: "20-21", name: "Gnoll", numEncountered: "1d2"},
     { range: "22", name: "Gnome", numEncountered: "1d8"},
     { range: "23-27", name: "Goblin", numEncountered: "2d4"},
@@ -47,7 +47,7 @@ var level1DungeonEncounters = new WeightedTable([
     { range: "66-69", name: "Rat", numEncountered: "5d10"},
     { range: "70-71", name: "Rot Grub", numEncountered: "5d4"},
     { range: "72", name: "Shrieker", numEncountered: "1d8"},
-    { range: "73-76", name: "Skeleton (Undead)", numEncountered: "2d4"},
+    { range: "73-76", name: "Skeleton", numEncountered: "2d4"},
     { range: "77-79", name: "Snake, Spitting Cobra", numEncountered: "1d6"},
     { range: "80-82", name: "Spider, Giant Crab", numEncountered: "1d2"},
     { range: "83-85", name: "Stirge", numEncountered: "1d10"},
@@ -55,7 +55,7 @@ var level1DungeonEncounters = new WeightedTable([
     { range: "88-89", name: "Troglodyte", numEncountered: "1d2"},
     { range: "90-91", name: "Wolf", numEncountered: "1d3"},
     { range: "92", name: "Yellow Mold", numEncountered: "1d4"},
-    { range: "93-95", name: "Zombie (Undead)", numEncountered: "1d4"},
+    { range: "93-95", name: "Zombie", numEncountered: "1d4"},
     { range: "96-100", name: "Table:level2"}
 ])
 
@@ -72,7 +72,7 @@ var level2DungeonEncounters = new WeightedTable([
     { range: "20", name: "Elf, Deep", numEncountered: "1d10"},
     { range: "21", name: "Elf, Drow", numEncountered: "2d4"},
     { range: "22-23", name: "Fly, Giant Carnivorous", numEncountered: "1d6"},
-    { range: "24-25", name: "Ghoul (Undead)", numEncountered: "1d4"},
+    { range: "24-25", name: "Ghoul", numEncountered: "1d4"},
     { range: "26-27", name: "Gnoll", numEncountered: "1d6"},
     { range: "28", name: "Gnome", numEncountered: "1d8"},
     { range: "29-30", name: "Goblin", numEncountered: "3d4"},
@@ -95,7 +95,7 @@ var level2DungeonEncounters = new WeightedTable([
     { range: "65-67", name: "Rat", numEncountered: "5d10"},
     { range: "68", name: "Rot Grub", numEncountered: "5d4"},
     { range: "69", name: "Shrieker", numEncountered: "1d8"},
-    { range: "70-73", name: "Skeleton (Undead)", numEncountered: "3d4"},
+    { range: "70-73", name: "Skeleton", numEncountered: "3d4"},
     { range: "74-75", name: "Snake, Pit Viper", numEncountered: "1d6"},
     { range: "76-77", name: "Snake, Spitting Cobra", numEncountered: "1d6"},
     { range: "78-80", name: "Spider, Giant Crab", numEncountered: "1d4"},
@@ -105,7 +105,7 @@ var level2DungeonEncounters = new WeightedTable([
     { range: "87-88", name: "Troglodyte", numEncountered: "1d3"},
     { range: "89-90", name: "Wolf", numEncountered: "2d4"},
     { range: "91", name: "Yellow Mold", numEncountered: "1d4"},
-    { range: "92-95", name: "Zombie (Undead)", numEncountered: "2d4"},
+    { range: "92-95", name: "Zombie", numEncountered: "2d4"},
     { range: "96-100", name: "Table:level3"}
 ])
 
@@ -123,7 +123,7 @@ var level3DungeonEncounters = new WeightedTable([
     { range: "26-27", name: "Elf, Drow",                 numEncountered: "2d6"},
     { range: "28-29", name: "Gargoyle",                  numEncountered: "1d3"},
     { range: "30",    name: "Gelatinous Cube", numEncountered: "1"},
-    { range: "31-33", name: "Ghoul (Undead) (Undead)", numEncountered: "1d6"},
+    { range: "31-33", name: "Ghoul", numEncountered: "1d6"},
     { range: "34-36", name: "Gnoll", numEncountered: "2d4"},
     { range: "37", name: "Gray Ooze", numEncountered: "1"},
     { range: "38", name: "Green Slime", numEncountered: "1"},
@@ -154,7 +154,7 @@ var level3DungeonEncounters = new WeightedTable([
     { range: "88-89", name: "Wight", numEncountered: "1d4"},
     { range: "90-91", name: "Wolf, Dire", numEncountered: "1d4"},
     { range: "92", name: "Yellow Mold", numEncountered: "1d4"},
-    { range: "93-95", name: "Zombie (Undead)", numEncountered: "2d6"},
+    { range: "93-95", name: "Zombie", numEncountered: "2d6"},
     { range: "96-100", name: "Table:level4"}
 ])
 
