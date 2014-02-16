@@ -283,7 +283,7 @@ var level5DungeonEncounters = new WeightedTable([
     { range: "70-71", name: "Owl Bear", numEncountered: "1d3"},
     { range: "72-73", name: "Phase Tiger", numEncountered: "1d2"},
     { range: "74", name: "Piercer (3 HD)", numEncountered: "3d6"},
-    { range: "75-76", name: "Thagodessa", numEncountered: "1d6"},
+    { range: "75-76", name: "Rhagodessa", numEncountered: "1d6"},
     { range: "77", name: "Rot Grub", numEncountered: "5d4"},
     { range: "78", name: "Rust Monster", numEncountered: "1d2"},
     { range: "79-80", name: "Scorpion, Giant", numEncountered: "1d6"},
@@ -355,5 +355,6 @@ var dungeonEncounters = {
     demon_devil_dragon4: demonDevilDragon4DungeonEncounters,
     level5: level5DungeonEncounters,
     demon_devil_dragon5: demonDevilDragon5DungeonEncounters,
+    level6: level6DungeonEncounters,
     demon_devil_dragon6: demonDevilDragon6DungeonEncounters
 }

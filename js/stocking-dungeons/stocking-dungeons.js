@@ -7,11 +7,11 @@ function getDungeonLevel() {
 }
 
 function stockRoom() {
-    var roomContents = rollDice(6);
+    var roomContents = rollDice(5) + 1;
     var treasureRoll = rollDice(6);
 
     var output = "";
-    if (roomContents == 1 || roomContents == 2) {
+    if (/*roomContents == 1 ) ||*/ roomContents == 2) {
         output = "<p>Empty</p>";
         if (treasureRoll == 1) {
             output += "<p>Treasure: " + generateUnprotectedTreasure(getDungeonLevel())['output'] + "</p>"
