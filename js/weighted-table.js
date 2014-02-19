@@ -33,7 +33,6 @@ var WeightedTable = (function() {
         var globalMax = undefined
         for (var i = 0; i < tableArray.length; i++) {
             var itemMap = tableArray[i]
-            console.log('processing entry: ' + itemMap['name'].toString())
             var itemMin = undefined
             var itemMax = undefined
             if ("min" in itemMap) {
@@ -86,6 +85,33 @@ var WeightedTable = (function() {
     WeightedTable.prototype.setSides = function(sides) {
         this._sides = sides;
     };
+
+    WeightedTable.prototype.getOffset = function() {
+        return this._offset;
+    };
+
+    WeightedTable.prototype.setOffset = function(offset) {
+        this._offset = offset;
+        console.log('offset set: ' + this._offset.toString())
+    };
+
+    WeightedTable.prototype.addItem = function(itemMap) {
+        var itemMin = itemMap['min'];
+        var itemMax = itemMap['max'];
+        if ((itemMin == undefined || itemMax == undefined) && "range" in itemMap) {
+            var pos = itemMap["range"].indexOf("-");
+            if (pos >= 0) {
+                itemMin = parseInt(itemMap["range"].substr(0, pos))
+                itemMax = parseInt(itemMap["range"].substr(pos + 1))
+            } else {
+                itemMin = parseInt(itemMap["range"])
+                itemMax = itemMin
+            }
+            itemMap["min"] = itemMin
+            itemMap["max"] = itemMax
+        }
+        this._items.push(itemMap);
+    }
 
     WeightedTable.prototype.roll = function() {
         return Math.floor((Math.random() * this._sides) + this._offset);

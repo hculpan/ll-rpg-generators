@@ -2,359 +2,68 @@
  * Created by harry on 2/9/14.
  */
 
-function getDungeonEncounter(dungeonLevel) {
-    var dungeonEncounter = dungeonEncounters['level' + dungeonLevel.toString()]
-    if (dungeonEncounter != undefined) {
-        var value = dungeonEncounter.getValue()
-        while (value['name'].substr(0, 6) == 'Table:') {
-            dungeonEncounter = dungeonEncounters[value['name'].substr(6)]
-            value = dungeonEncounter.getValue()
-        }
-        return value;
+var dungeonEncounters = {}
+
+function getDungeonEncounterByLevel(dungeonLevel, callback) {
+    getDungeonEncounter('Dungeon Encounters: Level ' + dungeonLevel.toString(), callback);
+}
+
+function getDungeonEncounterTable(tableName, valueCallback, callback) {
+    var result = dungeonEncounters[tableName];
+    if (result == undefined) {
+        console.log('loading table ' + tableName);
+        var EncounterTable = Parse.Object.extend('EncounterTable');
+        var EncounterTableItem = Parse.Object.extend('EncounterTableItem');
+
+        var query = new Parse.Query(EncounterTable);
+        query.equalTo("name", tableName);
+        query.find({
+            success: function(results) {
+                var table = results[0];
+                var queryInner = new Parse.Query(EncounterTableItem);
+                queryInner.equalTo("parent", table);
+                queryInner.ascending("range");
+                queryInner.find({
+                    success: function(results) {
+                        var wTable = new WeightedTable([]);
+                        wTable.setSides(table.get('max'));
+                        wTable.setOffset(table.get('min'));
+                        for (var i = 0; i < results.length; i++) {
+                            var o = results[i];
+                            wTable.addItem({
+                                name: o.get('name'),
+                                range: o.get('range'),
+                                numEncountered:o.get('numEncountered')
+                            });
+                        }
+                        dungeonEncounters[tableName] = wTable;
+                        callback(wTable, valueCallback);
+                    }
+                });
+            }
+        });
     } else {
-        return undefined
+        console.log("returning cached table");
+        callback(result, valueCallback)
     }
 }
 
-var level1DungeonEncounters = new WeightedTable([
-    { range: "01-03", name: "Bat",                      numEncountered: "1d100"},
-    { range: "04",    name: "Bee, Giant Killer",        numEncountered: "1d6"},
-    { range: "05-07", name: "Beetle, Giant Fire",       numEncountered: "1d4"},
-    { range: "08-10", name: "Centipede, Giant",         numEncountered: "2d4"},
-    { range: "11-12", name: "Dwarf",                    numEncountered: "1d6"},
-    { range: "13",    name: "Elf",                      numEncountered: "1d4"},
-    { range: "14",    name: "Elf, Deep",                numEncountered: "1d8"},
-    { range: "15-17", name: "Fly, Giant Carnivorous",   numEncountered: "1d6"},
-    { range: "18-19", name: "Ghoul", numEncountered: "1d2"},
-    { range: "20-21", name: "Gnoll", numEncountered: "1d2"},
-    { range: "22", name: "Gnome", numEncountered: "1d8"},
-    { range: "23-27", name: "Goblin", numEncountered: "2d4"},
-    { range: "28", name: "Golem, Wood", numEncountered: "1"},
-    { range: "29-31", name: "Hobgoblin", numEncountered: "1d4"},
-    { range: "32-34", name: "Insect Swarm", numEncountered: "1"},
-    { range: "35-39", name: "Kobold", numEncountered: "4d4"},
-    { range: "40-41", name: "Lizard, Giant Gecko", numEncountered: "1"},
-    { range: "42-43", name: "Lizardfolk", numEncountered: "1d2"},
-    { range: "44-45", name: "Locust, Subterranean", numEncountered: "1d6"},
-    { range: "46", name: "Men, Acoylyte", numEncountered: "1d6"},
-    { range: "47-48", name: "Men, Berserker", numEncountered: "1d6"},
-    { range: "49-50", name: "Men, Slave", numEncountered: "3d4"},
-    { range: "51-52", name: "Morlock", numEncountered: "1d8"},
-    { range: "53-55", name: "NPC Party", numEncountered: "1d6+2"},
-    { range: "56-60", name: "Orc", numEncountered: "1d8"},
-    { range: "61", name: "Piercer (1 HD)", numEncountered: "2d4"},
-    { range: "62-65", name: "Rat, Giant", numEncountered: "3d6"},
-    { range: "66-69", name: "Rat", numEncountered: "5d10"},
-    { range: "70-71", name: "Rot Grub", numEncountered: "5d4"},
-    { range: "72", name: "Shrieker", numEncountered: "1d8"},
-    { range: "73-76", name: "Skeleton", numEncountered: "2d4"},
-    { range: "77-79", name: "Snake, Spitting Cobra", numEncountered: "1d6"},
-    { range: "80-82", name: "Spider, Giant Crab", numEncountered: "1d2"},
-    { range: "83-85", name: "Stirge", numEncountered: "1d10"},
-    { range: "86-87", name: "Toad, Giant", numEncountered: "1d3"},
-    { range: "88-89", name: "Troglodyte", numEncountered: "1d2"},
-    { range: "90-91", name: "Wolf", numEncountered: "1d3"},
-    { range: "92", name: "Yellow Mold", numEncountered: "1d4"},
-    { range: "93-95", name: "Zombie", numEncountered: "1d4"},
-    { range: "96-100", name: "Table:level2"}
-])
-
-var level2DungeonEncounters = new WeightedTable([
-    { range: "01-05", name: "Table:level1"},
-    { range: "06-07", name: "Bat, Giant",               numEncountered: "1d10"},
-    { range: "8", name: "Bee, Giant Killer", numEncountered: "1d10"},
-    { range: "9-10", name: "Beetle, Giant Fire", numEncountered: "1d8"},
-    { range: "11-12", name: "Beetle, Giant Spitting", numEncountered: "1d6"},
-    { range: "13-14", name: "Bugbear", numEncountered: "1d2"},
-    { range: "15-16", name: "Centipede, Giant", numEncountered: "3d4"},
-    { range: "17-18", name: "Dwarf", numEncountered: "2d4"},
-    { range: "19", name: "Dwarf, Duergar", numEncountered: "2d4"},
-    { range: "20", name: "Elf, Deep", numEncountered: "1d10"},
-    { range: "21", name: "Elf, Drow", numEncountered: "2d4"},
-    { range: "22-23", name: "Fly, Giant Carnivorous", numEncountered: "1d6"},
-    { range: "24-25", name: "Ghoul", numEncountered: "1d4"},
-    { range: "26-27", name: "Gnoll", numEncountered: "1d6"},
-    { range: "28", name: "Gnome", numEncountered: "1d8"},
-    { range: "29-30", name: "Goblin", numEncountered: "3d4"},
-    { range: "31", name: "Golem, Wood", numEncountered: "1"},
-    { range: "32", name: "Green Slime", numEncountered: "1"},
-    { range: "33-35", name: "Hobgoblin", numEncountered: "1d6"},
-    { range: "36-37", name: "Kobold", numEncountered: "5d4"},
-    { range: "38", name: "Lizard, Giant Draco", numEncountered: "1"},
-    { range: "39", name: "Lizard, Giant Gecko", numEncountered: "1d3"},
-    { range: "40-41", name: "Lizardfolk", numEncountered: "1d6"},
-    { range: "42", name: "Locust, Subterranean", numEncountered: "3d4"},
-    { range: "43-44", name: "Man, Berserker", numEncountered: "2d4"},
-    { range: "45-46", name: "Morlock", numEncountered: "1d12"},
-    { range: "47-48", name: "Neanderthal", numEncountered: "1d6"},
-    { range: "49-51", name: "NPC Party", numEncountered: "1d6+2"},
-    { range: "52-54", name: "Ogre", numEncountered: "1"},
-    { range: "55-59", name: "Orc", numEncountered: "2d6"},
-    { range: "60", name: "Piercer (1 HD)", numEncountered: "3d6"},
-    { range: "61-64", name: "Rat, Giant", numEncountered: "3d6"},
-    { range: "65-67", name: "Rat", numEncountered: "5d10"},
-    { range: "68", name: "Rot Grub", numEncountered: "5d4"},
-    { range: "69", name: "Shrieker", numEncountered: "1d8"},
-    { range: "70-73", name: "Skeleton", numEncountered: "3d4"},
-    { range: "74-75", name: "Snake, Pit Viper", numEncountered: "1d6"},
-    { range: "76-77", name: "Snake, Spitting Cobra", numEncountered: "1d6"},
-    { range: "78-80", name: "Spider, Giant Crab", numEncountered: "1d4"},
-    { range: "81-82", name: "Stirge", numEncountered: "2d6"},
-    { range: "83-84", name: "Throghrin", numEncountered: "1d3"},
-    { range: "85-86", name: "Toad, Giant", numEncountered: "1d4"},
-    { range: "87-88", name: "Troglodyte", numEncountered: "1d3"},
-    { range: "89-90", name: "Wolf", numEncountered: "2d4"},
-    { range: "91", name: "Yellow Mold", numEncountered: "1d4"},
-    { range: "92-95", name: "Zombie", numEncountered: "2d4"},
-    { range: "96-100", name: "Table:level3"}
-])
-
-var level3DungeonEncounters = new WeightedTable([
-    { range: "01-05", name: "Table:level2"},
-    { range: "06-07", name: "Ant, Giant",                numEncountered: "1d2"},
-    { range: "08-09", name: "Ape, Albino",               numEncountered: "1d4"},
-    { range: "10-11", name: "Bat, Giant",                numEncountered: "1d10"},
-    { range: "12-13", name: "Beetle, Giant Carnivorous", numEncountered: "1d3"},
-    { range: "14-15", name: "Beetle, Giant Spitting",    numEncountered: "1d8"},
-    { range: "16-20", name: "Bugbear",                   numEncountered: "1d6"},
-    { range: "21-22", name: "Carcass Scavenger",         numEncountered: "1d2"},
-    { range: "23",    name: "Doppelganger",              numEncountered: "1"},
-    { range: "24-25", name: "Dwarf, Duergar",            numEncountered: "2d6"},
-    { range: "26-27", name: "Elf, Drow",                 numEncountered: "2d6"},
-    { range: "28-29", name: "Gargoyle",                  numEncountered: "1d3"},
-    { range: "30",    name: "Gelatinous Cube", numEncountered: "1"},
-    { range: "31-33", name: "Ghoul", numEncountered: "1d6"},
-    { range: "34-36", name: "Gnoll", numEncountered: "2d4"},
-    { range: "37", name: "Gray Ooze", numEncountered: "1"},
-    { range: "38", name: "Green Slime", numEncountered: "1"},
-    { range: "39-40", name: "Harpy", numEncountered: "1d4"},
-    { range: "41-44", name: "Hobgoblin", numEncountered: "2d6"},
-    { range: "45", name: "Lizard, Giant Draco", numEncountered: "1d2"},
-    { range: "46", name: "Lizard, Giant Gecko", numEncountered: "1d6"},
-    { range: "47-50", name: "Lizardfolk", numEncountered: "2d4"},
-    { range: "51-52", name: "Lycanthrope, Wererat", numEncountered: "1d8"},
-    { range: "53-54", name: "Neanderthal", numEncountered: "1d10"},
-    { range: "55-57", name: "NPC Party", numEncountered: "1d6+2"},
-    { range: "58-61", name: "Ogre", numEncountered: "1d3"},
-    { range: "62", name: "Piercer (1 HD)", numEncountered: "3d6"},
-    { range: "63", name: "Rot Grub", numEncountered: "5d4"},
-    { range: "64", name: "Shadow", numEncountered: "1d8"},
-    { range: "65", name: "Shrieker", numEncountered: "1d8"},
-    { range: "66-67", name: "Snake, Giant Python", numEncountered: "1d2"},
-    { range: "68-69", name: "Snake, Giant Rattler", numEncountered: "1d2"},
-    { range: "70-71", name: "Snake, Pit Viper", numEncountered: "1d8"},
-    { range: "72-73", name: "Spider, Giant Black Widow", numEncountered: "1d2"},
-    { range: "74-75", name: "Spider, Giant Crab", numEncountered: "1d4"},
-    { range: "76-77", name: "Spider, Giant Tarantula", numEncountered: "1d2"},
-    { range: "78", name: "Statue, Animated Crystal", numEncountered: "1d4"},
-    { range: "79-80", name: "Throghrin", numEncountered: "1d6"},
-    { range: "81-82", name: "Tick, Giant (2 HD)", numEncountered: "2d4"},
-    { range: "83-84", name: "Toad, Giant Poisonous", numEncountered: "1d4"},
-    { range: "85-87", name: "Troglodyte", numEncountered: "1d8"},
-    { range: "88-89", name: "Wight", numEncountered: "1d4"},
-    { range: "90-91", name: "Wolf, Dire", numEncountered: "1d4"},
-    { range: "92", name: "Yellow Mold", numEncountered: "1d4"},
-    { range: "93-95", name: "Zombie", numEncountered: "2d6"},
-    { range: "96-100", name: "Table:level4"}
-])
-
-var level4DungeonEncounters = new WeightedTable([
-    { range: "01-05", name: "Table:level3"},
-    { range: "06-07", name: "Ant, Giant", numEncountered: "1d6"},
-    { range: "08-09", name: "Ape, Albino", numEncountered: "1d6"},
-    { range: "10-11", name: "Ape, Man-Eating", numEncountered: "1d4"},
-    { range: "12-13", name: "Beetle, Giant Carnivorous", numEncountered: "1d6"},
-    { range: "14-15", name: "Blink Dog", numEncountered: "1d6"},
-    { range: "16-20", name: "Bugbear", numEncountered: "2d6"},
-    { range: "21-22", name: "Carcass Scavenger", numEncountered: "1d4"},
-    { range: "23-27", name: "Table:demon_devil_dragon4", numEncountered: "1d3"},
-    { range: "28", name: "Doppleganger", numEncountered: "1d4"},
-    { range: "29-30", name: "Gargoyle", numEncountered: "1d6"},
-    { range: "31", name: "Gas Spore", numEncountered: "1d3"},
-    { range: "32", name: "Gelatinous Cube", numEncountered: "1"},
-    { range: "33-35", name: "Ghast", numEncountered: "1d4"},
-    { range: "36", name: "Gray Ooze", numEncountered: "1"},
-    { range: "37-38", name: "Gray Worm", numEncountered: "1d3"},
-    { range: "39", name: "Green Slime", numEncountered: "1"},
-    { range: "40-41", name: "Harpy", numEncountered: "1d6"},
-    { range: "42-43", name: "Hell Hound (3 HD)", numEncountered: "2d4"},
-    { range: "44", name: "Lizard, Giant Draco", numEncountered: "1d4"},
-    { range: "45", name: "Lizard, Giant Horned", numEncountered: "1d2"},
-    { range: "46", name: "Lizard, Giant Tuatara", numEncountered: "1"},
-    { range: "47-48", name: "Lycanthrope, Werewolf", numEncountered: "1d6"},
-    { range: "49-50", name: "Minotaur", numEncountered: "1d3"},
-    { range: "51-55", name: "NPC Party", numEncountered: "1d6+2"},
-    { range: "56", name: "Ochre Jelly", numEncountered: "1"},
-    { range: "57-62", name: "Ogre", numEncountered: "1d6"},
-    { range: "63", name: "Otyugh (6 HD)", numEncountered: "1d6"},
-    { range: "64-65", name: "Owl Bear", numEncountered: "1d2"},
-    { range: "66", name: "Piercer (2 HD)", numEncountered: "3d6"},
-    { range: "67-68", name: "Rhagodessa", numEncountered: "1d4"},
-    { range: "69", name: "Rot Grub", numEncountered: "5d4"},
-    { range: "70-71", name: "Shadow", numEncountered: "1d8"},
-    { range: "72-73", name: "Snake, Giant Python", numEncountered: "1d3"},
-    { range: "74-75", name: "Snake, Giant Rattler", numEncountered: "1d4"},
-    { range: "76-77", name: "Spider, Giant Black Widow", numEncountered: "1d3"},
-    { range: "78-79", name: "Spider, Giant Tarantula", numEncountered: "1d3"},
-    { range: "80", name: "Statue, Animated Crystal", numEncountered: "1d6"},
-    { range: "81", name: "Statue, Animated Iron", numEncountered: "1d4"},
-    { range: "82-83", name: "Throghrin", numEncountered: "2d4"},
-    { range: "84-85", name: "Tick, Giant (2 HD)", numEncountered: "3d4"},
-    { range: "86-87", name: "Toad, Giant Poisonous", numEncountered: "2d4"},
-    { range: "88-90", name: "Troll", numEncountered: "1"},
-    { range: "91-92", name: "Wasp, Giant", numEncountered: "1d6"},
-    { range: "93-94", name: "Wight", numEncountered: "1d6"},
-    { range: "95", name: "Yellow Mold", numEncountered: "1d8"},
-    { range: "96-100", name: "Table:level5"}
-])
-
-var demonDevilDragon4DungeonEncounters = new WeightedTable([
-    { range: "01-20", name: "Dragon, Black (Young)", numEncountered: "1"},
-    { range: "21-30", name: "Dragon, Brass (Young)", numEncountered: "1"},
-    { range: "31-50", name: "Dragon, White (Young)", numEncountered: "1"},
-    { range: "51-70", name: "Hydra, 6-Headed", numEncountered: "1"},
-    { range: "71-80", name: "Demon, Quasit (Lower Order Demon)", numEncountered: "1"},
-    { range: "81-90", name: "Devil, Imp (Lesser devil)", numEncountered: "1"},
-    { range: "91-100", name: "Demon, Succubus/Incubus (Standard Order Demon)", numEncountered: "1"}
-])
-
-var demonDevilDragon5DungeonEncounters = new WeightedTable([
-    { range: "01-10", name: "Dragon, Black (Young)", numEncountered: "1d2"},
-    { range: "11-20", name: "Dragon, Brass (Young)", numEncountered: "1d2"},
-    { range: "21-30", name: "Dragon, Copper (Young)", numEncountered: "1"},
-    { range: "31-40", name: "Dragon, Green (Young)", numEncountered: "1"},
-    { range: "41-50", name: "Dragon, White (Young)", numEncountered: "1"},
-    { range: "51-60", name: "Hydra, 7-Headed", numEncountered: "1"},
-    { range: "61-70", name: "Demon, Quasit (Lower Order Demon)", numEncountered: "1"},
-    { range: "71-80", name: "Devil, Imp (Lesser devil)", numEncountered: "1"},
-    { range: "81-90", name: "Demon, Succubus/Incubus (Standard Order Demon)", numEncountered: "1"},
-    { range: "91-100", name: "Devil, Erinyes (Lesser devil)", numEncountered: "1"}
-])
-
-var demonDevilDragon6DungeonEncounters = new WeightedTable([
-    { range: "01-10", name: "Dragon, Black (Mature)", numEncountered: "1"},
-    { range: "11-20", name: "Dragon, Blue (Young)", numEncountered: "1"},
-    { range: "21-30", name: "Dragon, Brass (Young)", numEncountered: "1d2"},
-    { range: "31-40", name: "Dragon, Bronze (Young)", numEncountered: "1"},
-    { range: "41-50", name: "Dragon, Copper (Mature)", numEncountered: "1"},
-    { range: "51-60", name: "Dragon, Green (Young)", numEncountered: "1d2"},
-    { range: "61-70", name: "Dragon, White (Mature)", numEncountered: "1d2"},
-    { range: "51-60", name: "Hydra, 8-Headed", numEncountered: "1"},
-    { range: "61-70", name: "Demon, Quasit (Lower Order Demon)", numEncountered: "1"},
-    { range: "71-80", name: "Devil, Imp (Lesser devil)", numEncountered: "1"},
-    { range: "81-90", name: "Demon, Succubus/Incubus (Standard Order Demon)", numEncountered: "1"},
-    { range: "91-100", name: "Devil, Erinyes (Lesser devil)", numEncountered: "1"},
-    { range: "91-100", name: "Devil, Bone (Lesser devil)", numEncountered: "1"}
-])
-
-var level5DungeonEncounters = new WeightedTable([
-    { range: "01-05", name: "Table:level3"},
-    { range: "06-07", name: "Ant, Giant", numEncountered: "1d6"},
-    { range: "08-09", name: "Ape, Man-Eating", numEncountered: "1d6"},
-    { range: "10-11", name: "Basilisk", numEncountered: "1"},
-    { range: "12-13", name: "Bear, Cave", numEncountered: "1"},
-    { range: "14-15", name: "Beetle, Giant Boring", numEncountered: "1d4"},
-    { range: "16-17", name: "Carcass Scavenger", numEncountered: "1d6"},
-    { range: "18-19", name: "Cockatrice", numEncountered: "1d2"},
-    { range: "20-24", name: "Table:demon_devil_dragon5"},
-    { range: "25", name: "Doppleganger", numEncountered: "1d6"},
-    { range: "26", name: "Fungi, Violet", numEncountered: "1d4"},
-    { range: "27-28", name: "Gargoyle", numEncountered: "2d4"},
-    { range: "29", name: "Gas Spore", numEncountered: "1d3"},
-    { range: "30-32", name: "Ghast", numEncountered: "1d6"},
-    { range: "33-35", name: "Giant, Hill", numEncountered: "1d2"},
-    { range: "36", name: "Golem, Felsh", numEncountered: "1d6"},
-    { range: "37-38", name: "Gray Worm", numEncountered: "1d6"},
-    { range: "39", name: "Groaning Spirit", numEncountered: "1"},
-    { range: "40-41", name: "Hell Hound (4 HD)", numEncountered: "2d4"},
-    { range: "42-43", name: "Jackalwere", numEncountered: "1d4"},
-    { range: "44-45", name: "Lizard, Giant Horned", numEncountered: "1d3"},
-    { range: "46-47", name: "Lizard, Giant Tuatara", numEncountered: "1d2"},
-    { range: "48-49", name: "Lycanthrope, Wereboar", numEncountered: "1d4"},
-    { range: "50-51", name: "Lycanthrope, Werewolf", numEncountered: "1d6"},
-    { range: "52-53", name: "Lycanthrope, Weretiger", numEncountered: "1d2"},
-    { range: "54-55", name: "Manticore", numEncountered: "1d2"},
-    { range: "56-57", name: "Medusa", numEncountered: "1d2"},
-    { range: "58-60", name: "Minotaur", numEncountered: "1d6"},
-    { range: "61-62", name: "Mummy", numEncountered: "1d2"},
-    { range: "63-67", name: "NPC Party", numEncountered: "1d6+2"},
-    { range: "68", name: "Ochre Jelly", numEncountered: "1"},
-    { range: "69", name: "Otyugh (7 HD)", numEncountered: "1"},
-    { range: "70-71", name: "Owl Bear", numEncountered: "1d3"},
-    { range: "72-73", name: "Phase Tiger", numEncountered: "1d2"},
-    { range: "74", name: "Piercer (3 HD)", numEncountered: "3d6"},
-    { range: "75-76", name: "Rhagodessa", numEncountered: "1d6"},
-    { range: "77", name: "Rot Grub", numEncountered: "5d4"},
-    { range: "78", name: "Rust Monster", numEncountered: "1d2"},
-    { range: "79-80", name: "Scorpion, Giant", numEncountered: "1d6"},
-    { range: "81-82", name: "Spectre", numEncountered: "1d2"},
-    { range: "83-84", name: "Statue, Animated Stone", numEncountered: "1d2"},
-    { range: "85-86", name: "Tick, Giant", numEncountered: "3d4"},
-    { range: "87-90", name: "Troll", numEncountered: "1d2"},
-    { range: "91-92", name: "Wasp, Giant", numEncountered: "1d10"},
-    { range: "93-94", name: "Wraith", numEncountered: "1d3"},
-    { range: "95", name: "Yellow Mold", numEncountered: "1d8"},
-    { range: "96-100", name: "Table:level6"}
-])
-
-var level6DungeonEncounters = new WeightedTable([
-    { range: "01-05", name: "Talbe:level5"},
-    { range: "06-07", name: "Ant, Giant", numEncountered: "2d6"},
-    { range: "08-09", name: "Ape, Man-Eating", numEncountered: "2d4"},
-    { range: "10-11", name: "Basilisk", numEncountered: "1d2"},
-    { range: "12-13", name: "Bear, Cave", numEncountered: "1d2"},
-    { range: "14-15", name: "Beetle, Giant Boring", numEncountered: "1d6"},
-    { range: "16", name: "Black Pudding", numEncountered: "1"},
-    { range: "17-18", name: "Cockatrice", numEncountered: "1d4"},
-    { range: "19-23", name: "demon_devil_dragon6"},
-    { range: "24", name: "Fungi, Violet", numEncountered: "1d4"},
-    { range: "25", name: "Gas Spore", numEncountered: "1d3"},
-    { range: "26-29", name: "Giant, Hill", numEncountered: "1d4"},
-    { range: "30-32", name: "Giant, Stone", numEncountered: "1d2"},
-    { range: "33", name: "Golem, Bone", numEncountered: "1"},
-    { range: "34", name: "Gorgon", numEncountered: "1"},
-    { range: "35", name: "Green Slime", numEncountered: "1"},
-    { range: "36", name: "Groaning Spirit", numEncountered: "1"},
-    { range: "37-39", name: "Hell Hound (5 HD)", numEncountered: "2d4"},
-    { range: "40", name: "Lamia", numEncountered: "1"},
-    { range: "41", name: "Lammasu", numEncountered: "1d2"},
-    { range: "42-44", name: "Lizard, Giant Tuatara", numEncountered: "1d3"},
-    { range: "45", name: "Lurker Above", numEncountered: "1"},
-    { range: "46-47", name: "Lycanthrope, Werebear", numEncountered: "1d2"},
-    { range: "48-49", name: "Lycanthrope, Weretiger", numEncountered: "1d4"},
-    { range: "50-51", name: "Manticore", numEncountered: "1d3"},
-    { range: "52-53", name: "Medusa", numEncountered: "1d3"},
-    { range: "54-57", name: "Minotaur", numEncountered: "1d8"},
-    { range: "58-60", name: "Mummy", numEncountered: "1d4"},
-    { range: "61-65", name: "NPC Party", numEncountered: "1d6+2"},
-    { range: "66", name: "Naga, Spirit", numEncountered: "1"},
-    { range: "67", name: "Ochre Jelly", numEncountered: "1"},
-    { range: "68", name: "Ogre Mage", numEncountered: "1d2"},
-    { range: "69", name: "Otyugh (8 HD)", numEncountered: "1d6"},
-    { range: "70-71", name: "Owl Bear", numEncountered: "1d4"},
-    { range: "72-73", name: "Phase Tiger", numEncountered: "1d4"},
-    { range: "74", name: "Pierce (4 HD)", numEncountered: "3d6"},
-    { range: "75", name: "Rot Grub", numEncountered: "5d4"},
-    { range: "76", name: "Rust Monster", numEncountered: "1d4"},
-    { range: "77-78", name: "Scorpion, Giant", numEncountered: "1d4"},
-    { range: "79-81", name: "Spectre", numEncountered: "1d4"},
-    { range: "82-83", name: "Tick, Giant (4 HD)", numEncountered: "3d4"},
-    { range: "84-88", name: "Troll", numEncountered: "1d4"},
-    { range: "89-90", name: "Wasp, Giant", numEncountered: "1d20"},
-    { range: "91-93", name: "Wraith", numEncountered: "1d4"},
-    { range: "94", name: "Wraith", numEncountered: "1d4"},
-    { range: "95", name: "Yellow Mold", numEncountered: "1d8"},
-    { range: "96-100", name: "Table:level7"}
-])
-
-var dungeonEncounters = {
-    level1: level1DungeonEncounters,
-    level2: level2DungeonEncounters,
-    level3: level3DungeonEncounters,
-    level4: level4DungeonEncounters,
-    demon_devil_dragon4: demonDevilDragon4DungeonEncounters,
-    level5: level5DungeonEncounters,
-    demon_devil_dragon5: demonDevilDragon5DungeonEncounters,
-    level6: level6DungeonEncounters,
-    demon_devil_dragon6: demonDevilDragon6DungeonEncounters
+function _getDungeonEncounterInner(table, callback) {
+    if (table != undefined) {
+        var value = table.getValue()
+        if (value['name'].substr(0, 6) == 'Table:') {
+            getDungeonEncounter(value['name'].substr(6), callback);
+        } else {
+            callback(value);
+        }
+    } else {
+        callback(undefined);
+    }
 }
+
+function getDungeonEncounter(tableName, callback) {
+    getDungeonEncounterTable(tableName, callback, function(table, callback) {
+        _getDungeonEncounterInner(table, callback);
+    });
+}
+
