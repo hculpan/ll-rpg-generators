@@ -28,6 +28,7 @@ function getDungeonEncounterTable(tableName, valueCallback, callback) {
                         var wTable = new WeightedTable([]);
                         wTable.setSides(table.get('max'));
                         wTable.setOffset(table.get('min'));
+                        wTable.setName(table.get('name'));
                         for (var i = 0; i < results.length; i++) {
                             var o = results[i];
                             wTable.addItem({
