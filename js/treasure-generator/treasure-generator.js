@@ -107,7 +107,7 @@ function generateTreasure(hoardClass) {
 }
 
 function generateTreasureText(hoardClass) {
-    var results = generateTreasure(getHoardClass());
+    var results = generateTreasure(hoardClass);
     var output = null;
 
     var totalValue = 0;
