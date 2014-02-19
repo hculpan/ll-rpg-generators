@@ -2,8 +2,55 @@
  * Created by harry on 2/3/14.
  */
 
+roomContents = [];
+
+currentRoomDisplay = -1;
+
+$(document).ready(function() {
+    $("#sd-prev-btn").prop('disabled', true);
+    $("#sd-next-btn").prop('disabled', true);
+});
+
 function getDungeonLevel() {
     return parseInt($('#dungeon-level').val());
+}
+
+function displayPrevious() {
+    console.log("displayPrevious: currentRoomDisplay=" + currentRoomDisplay.toString());
+    $("#sd-next-btn").prop('disabled', false);
+    if (currentRoomDisplay > 0) {
+        currentRoomDisplay--;
+        $("#sd-main-result").html(roomContents[currentRoomDisplay]);
+        if (currentRoomDisplay == 0) {
+            $("#sd-prev-btn").prop('disabled', true);
+        }
+    } else {
+        $("#sd-next-btn").prop('disabled', true);
+    }
+}
+
+function displayNext() {
+    $("#sd-prev-btn").prop('disabled', false);
+    if (currentRoomDisplay < roomContents.length - 1) {
+        currentRoomDisplay++;
+        $("#sd-main-result").html(roomContents[currentRoomDisplay]);
+        if (currentRoomDisplay == roomContents.length - 1) {
+            $("#sd-next-btn").prop('disabled', true);
+        }
+    } else {
+        $("#sd-next-btn").prop('disabled', true);
+    }
+}
+
+function storeResult(output) {
+    roomContents.push(output);
+    currentRoomDisplay = roomContents.length - 1;
+    $("#sd-next-btn").prop('disabled', true);
+    if (roomContents.length > 1) {
+        $("#sd-prev-btn").prop('disabled', false);
+    } else {
+        $("#sd-prev-btn").prop('disabled', true);
+    }
 }
 
 function stockRoom() {
@@ -22,15 +69,18 @@ function stockRoom() {
             output += "<p>Treasure: " + generateUnprotectedTreasure(getDungeonLevel())['output'] + "</p>"
         }
     } else if (roomContents == 4 || roomContents == 5) {
-        buildMonsterDungeonEncounter(treasureRoll);
+        buildMonsterDungeonEncounter(treasureRoll, storeResult);
     } else {
         output = "<p>Special</p>";
     }
 
+    if (output != undefined && output != "") {
+        storeResult(output);
+    }
     $("#sd-main-result").html(output);
 }
 
-function buildMonsterDungeonEncounter(treasureRoll) {
+function buildMonsterDungeonEncounter(treasureRoll, storeResult) {
     getDungeonEncounterByLevel(getDungeonLevel(), function(monster) {
         var num = diceRoller.roll(monster['numEncountered']).total;
 
@@ -69,6 +119,7 @@ function buildMonsterDungeonEncounter(treasureRoll) {
                     }
                     output += "</p>"
 
+                    storeResult(output);
                     $("#sd-main-result").html(output);
                 }
             },
