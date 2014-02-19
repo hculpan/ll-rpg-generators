@@ -23,6 +23,7 @@
  * respectively.
  */
 var WeightedTable = (function() {
+    var _name;
     var _sides;
     var _offset;
     var _items;
@@ -86,13 +87,20 @@ var WeightedTable = (function() {
         this._sides = sides;
     };
 
+    WeightedTable.prototype.getName = function() {
+        return this._name;
+    };
+
+    WeightedTable.prototype.setName = function(name) {
+        this._name = name;
+    };
+
     WeightedTable.prototype.getOffset = function() {
         return this._offset;
     };
 
     WeightedTable.prototype.setOffset = function(offset) {
         this._offset = offset;
-        console.log('offset set: ' + this._offset.toString())
     };
 
     WeightedTable.prototype.addItem = function(itemMap) {
