@@ -50,8 +50,10 @@ function buildMonsterDungeonEncounter(treasureRoll) {
                     var treasure = undefined
                     if (treasureRoll <= 3) {
                         if (monsterObj.get('hoard_class') != undefined && monsterObj.get('hoard_class') != "None") {
+                            console.log('generating treasure hoard');
                             treasure = generateTreasureText(monsterObj.get('hoard_class'))
                         } else {
+                            console.log('generating unprotected treasure');
                             treasure = generateUnprotectedTreasure(getDungeonLevel())
                         }
                         output += "<p>Treasure: " + treasure['output'] + "</p>";
