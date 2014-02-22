@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-2 col-lg-2">
-        <button id="sender" value="Stock Room" onclick="stockRoom();" class="btn btn-primary">Roll</button>
+        <button value="Stock Room" onclick="stockRoom();" class="btn btn-primary">Roll</button>
     </div>
     <div class="col-md-3 col-lg-3">
         <label class="control-label text-right">Dungeon Level </label>
@@ -18,15 +18,24 @@
 </div>
 <div class="row"><br></div>
 <div class="row">
-    <div class="col-md-2 col-lg-2">
-        <button id="sd-prev-btn" type="button" class="btn btn-default btn-lg" onclick="displayPrevious()">
+    <div class="col-md-1 col-lg-1">
+        <button id="sd-prev-btn" type="button" class="btn btn-default" onclick="displayPrevious()">
             <span class="glyphicon glyphicon-chevron-left"></span>
         </button>
     </div>
-    <div class="col-md-2 col-lg-2">
-        <button id="sd-next-btn"  type="button" class="btn btn-default btn-lg" onclick="displayNext()">
+    <div class="col-md-1 col-lg-1">
+        <button id="sd-next-btn"  type="button" class="btn btn-default" onclick="displayNext()">
             <span class="glyphicon glyphicon-chevron-right"></span>
         </button>
+    </div>
+    <div class="col-md-2 col-lg-2">
+        <button id="re-roll-monster" onclick="reRollMonster();" class="btn btn-default" disabled>Re-roll Monster</button>
+    </div>
+    <div class="col-md-2 col-lg-2">
+        <button id="re-roll-treasure" onclick="reRollTreasure();" class="btn btn-default" disabled>Re-roll Treasure</button>
+    </div>
+    <div class="col-md-2 col-lg-2">
+        <button id="re-roll-special" onclick="reRollSpecial();" class="btn btn-default" disabled>Re-roll Special</button>
     </div>
 </div>
 <div class="row"><br></div>

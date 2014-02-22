@@ -136,6 +136,10 @@ var WeightedTable = (function() {
         return undefined;
     }
 
+    WeightedTable.prototype.getText = function() {
+        return this.getValue()['name'];
+    }
+
     return WeightedTable;
 })();
 
