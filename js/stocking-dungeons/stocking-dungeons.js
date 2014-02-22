@@ -15,6 +15,10 @@ function getDungeonLevel() {
     return parseInt($('#dungeon-level').val());
 }
 
+function rollEncounterRolls() {
+    return $('#sd-encounter-rolls').prop('checked');
+}
+
 function displayPrevious() {
     console.log("displayPrevious: currentRoomDisplay=" + currentRoomDisplay.toString());
     $("#sd-next-btn").prop('disabled', false);
@@ -96,6 +100,11 @@ function buildMonsterDungeonEncounter(treasureRoll, storeResult) {
                 } else {
                     var monsterObj = results[0];
                     var output = "<p>Monster: " + num + " " + monsterObj.get('name') + "</p>";
+
+                    if (rollEncounterRolls()) {
+                        output += "<p>" + rollSurprise() + " " + rollReaction() + "</p>";
+                    }
+
                     output += "<p>" + buildMonsterStatBlock(monsterObj, true) + "</p>";
                     var treasure = undefined
                     if (treasureRoll <= 3) {
